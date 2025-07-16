@@ -91,6 +91,19 @@
         font-size: 1.6rem;
       }
     }
+    .privacy-facts {
+      background: #f1f5f9;
+      border-left: 4px solid #3b82f6;
+      padding: 1.2rem 1rem;
+      margin-top: 1rem;
+      border-radius: 6px;
+      color: #1e293b;
+    }
+    .privacy-facts ul {
+      margin: 0.5rem 0 0 1.2rem;
+      padding: 0;
+      list-style: disc inside;
+    }
   </style>
 </head>
 <body>
@@ -159,11 +172,18 @@
 
     <section aria-labelledby="privacy">
       <h2 id="privacy">Data Privacy & Protection</h2>
-      <p>At CalmTrack, your data security is a top priority. We store information in encrypted form, with strict access controls. No data is shared without explicit consent. All features comply with GDPR and HIPAA best practices.</p>
-      <p>For more details, review our
-        <a href="https://www.calmtrack.app/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and
-        <a href="https://www.calmtrack.app/terms" target="_blank" rel="noopener noreferrer">Terms of Use</a>.
-      </p>
+      <div class="privacy-facts">
+        <ul>
+          <li><strong>Local-First Storage:</strong> Your data is stored securely on your own device by default. This means your information remains private and under your control unless you choose to back it up or share it.</li>
+          <li><strong>Encryption at Rest:</strong> When CalmTrack stores information, it is encrypted on your device. This helps protect your data from unauthorized access.</li>
+          <li><strong>No Automatic Data Sharing:</strong> CalmTrack does <u>not</u> share your personal data or behavioral records with any third party or server unless you explicitly choose to export, email, or back up your data.</li>
+          <li><strong>Explicit User Actions:</strong> Only when you choose to generate a report or email a summary, is your data processed for that specific action, and never transmitted elsewhere without your consent.</li>
+          <li><strong>No Tracking or Analytics:</strong> We do not use cookies, trackers, or analytics scripts that collect behavioral or personal information.</li>
+          <li><strong>Transparent Controls:</strong> You can delete your data at any time from within the app. No hidden backups are made without your knowledge.</li>
+        </ul>
+        <p style="margin-top:1rem;"><em>We designed CalmTrack to put you in control. Our privacy approach is simple: your data, your device, your rules.</em></p>
+      </div>
+      <!-- ![image1](image1) -->
     </section>
 
     <section aria-labelledby="status">
