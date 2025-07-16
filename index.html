@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="CalmTrack empowers neurodiverse families and caregivers with intuitive behavioral tracking, insights, and privacy-first design." />
+  <meta property="og:title" content="CalmTrack – Empowering Neurodiverse Care" />
+  <meta property="og:description" content="A digital diary and insight tool for neurodiverse conditions. Track, analyze, and report with privacy and science at the core." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.calmtrack.app/" />
   <title>CalmTrack – Empowering Neurodiverse Care</title>
+  <link rel="icon" href="/favicon.ico" />
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -23,6 +29,26 @@
     }
     header p {
       font-size: 1.1rem;
+    }
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      z-index: 100;
+      background: #fff;
+      color: #1d4ed8;
+      padding: 8px;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      font-weight: bold;
+      box-shadow: 0 0 2px #1d4ed8;
     }
     main {
       max-width: 900px;
@@ -53,31 +79,40 @@
       color: #2563eb;
       text-decoration: none;
     }
-    a:hover {
+    a:hover, a:focus {
       text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      main {
+        margin: 1rem;
+        padding: 1rem;
+      }
+      header h1 {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
 <body>
-
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
     <h1>Welcome to CalmTrack</h1>
     <p>A Digital Diary and Insight Tool for Neurodiverse Conditions</p>
   </header>
 
-  <main>
-    <section>
-      <h2>Vision</h2>
+  <main id="main-content">
+    <section aria-labelledby="vision">
+      <h2 id="vision">Vision</h2>
       <p>To empower individuals and caregivers with a simple yet powerful tool to track emotional and behavioral health, identify triggers, and facilitate well-informed care and medical decisions.</p>
     </section>
 
-    <section>
-      <h2>Mission</h2>
+    <section aria-labelledby="mission">
+      <h2 id="mission">Mission</h2>
       <p>We aim to streamline behavioral and emotional tracking through intuitive, customizable logging and analysis tools, enabling parents, caregivers, and healthcare professionals to provide personalized care to neurodiverse individuals.</p>
     </section>
 
-    <section>
-      <h2>Who is CalmTrack for?</h2>
+    <section aria-labelledby="who">
+      <h2 id="who">Who is CalmTrack for?</h2>
       <p>CalmTrack is built for individuals and families affected by conditions such as:</p>
       <ul>
         <li><strong>Autism Spectrum Disorder (ASD)</strong> – affecting ~1 in 36 children</li>
@@ -90,8 +125,8 @@
       <p>Many of these individuals require ongoing clinical care and benefit from consistent behavioral tracking.</p>
     </section>
 
-    <section>
-      <h2>Key Features</h2>
+    <section aria-labelledby="features">
+      <h2 id="features">Key Features</h2>
       <ul>
         <li><strong>📝 Daily Behavior & Emotion Logging</strong>
           <ul>
@@ -122,22 +157,35 @@
       </ul>
     </section>
 
-    <section>
-      <h2>Data Privacy & Protection</h2>
+    <section aria-labelledby="privacy">
+      <h2 id="privacy">Data Privacy & Protection</h2>
       <p>At CalmTrack, your data security is a top priority. We store information in encrypted form, with strict access controls. No data is shared without explicit consent. All features comply with GDPR and HIPAA best practices.</p>
-      <p>For more details, review our <a href="https://www.calmtrack.app/privacy">Privacy Policy</a> and <a href="https://www.calmtrack.app/terms">Terms of Use</a>.</p>
+      <p>For more details, review our
+        <a href="https://www.calmtrack.app/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and
+        <a href="https://www.calmtrack.app/terms" target="_blank" rel="noopener noreferrer">Terms of Use</a>.
+      </p>
     </section>
 
-    <section>
-      <h2>Project Status</h2>
+    <section aria-labelledby="status">
+      <h2 id="status">Project Status</h2>
       <p>We’re currently in development. Beta testing will launch soon. Thank you for your interest and support.</p>
       <p><strong>Contact us:</strong> <a href="mailto:hello@calmtrack.app">hello@calmtrack.app</a></p>
     </section>
+
+    <!-- Optional: Early interest form
+    <section aria-labelledby="signup">
+      <h2 id="signup">Sign Up for Beta</h2>
+      <form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required aria-required="true" />
+        <button type="submit">Notify Me</button>
+      </form>
+    </section>
+    -->
   </main>
 
   <footer>
     <p>&copy; 2025 CalmTrack | Built for Families, Backed by Science</p>
   </footer>
-
 </body>
 </html>
