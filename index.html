@@ -1,211 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="CalmTrack empowers neurodiverse families and caregivers with intuitive behavioral tracking, insights, and privacy-first design." />
-  <meta property="og:title" content="CalmTrack – Empowering Neurodiverse Care" />
-  <meta property="og:description" content="A digital diary and insight tool for neurodiverse conditions. Track, analyze, and report with privacy and science at the core." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.calmtrack.app/" />
-  <title>CalmTrack – Empowering Neurodiverse Care</title>
-  <link rel="icon" href="/favicon.ico" />
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #f9fafb;
-      color: #1f2937;
-    }
-    header {
-      background-color: #3b82f6;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.3rem;
-    }
-    header p {
-      font-size: 1.1rem;
-    }
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      z-index: 100;
-      background: #fff;
-      color: #1d4ed8;
-      padding: 8px;
-    }
-    .skip-link:focus {
-      left: 1rem;
-      top: 1rem;
-      width: auto;
-      height: auto;
-      font-weight: bold;
-      box-shadow: 0 0 2px #1d4ed8;
-    }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    h2 {
-      color: #1d4ed8;
-      margin-top: 2rem;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    li {
-      margin-bottom: 0.5rem;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      padding: 1rem;
-      background: #e5e7eb;
-      color: #374151;
-    }
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-    a:hover, a:focus {
-      text-decoration: underline;
-    }
-    @media (max-width: 600px) {
-      main {
-        margin: 1rem;
-        padding: 1rem;
-      }
-      header h1 {
-        font-size: 1.6rem;
-      }
-    }
-    .privacy-facts {
-      background: #f1f5f9;
-      border-left: 4px solid #3b82f6;
-      padding: 1.2rem 1rem;
-      margin-top: 1rem;
-      border-radius: 6px;
-      color: #1e293b;
-    }
-    .privacy-facts ul {
-      margin: 0.5rem 0 0 1.2rem;
-      padding: 0;
-      list-style: disc inside;
-    }
-  </style>
-</head>
-<body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header>
-    <h1>Welcome to CalmTrack</h1>
-    <p>A Digital Diary and Insight Tool for Neurodiverse Conditions</p>
-  </header>
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 
-  <main id="main-content">
-    <section aria-labelledby="vision">
-      <h2 id="vision">Vision</h2>
-      <p>To empower individuals and caregivers with a simple yet powerful tool to track emotional and behavioral health, identify triggers, and facilitate well-informed care and medical decisions.</p>
-    </section>
+export default function CalmTrackLandingPage() {
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-sky-50 to-blue-100 text-gray-900">
+      {/* Hero */}
+      <section className="py-20 px-8 md:px-16 lg:px-32 text-center">
+        <h1 className="text-5xl font-extrabold mb-6">CalmTrack</h1>
+        <p className="text-xl max-w-2xl mx-auto mb-10">
+          Empowering parents, therapists, and educators with intelligent tools to track, analyze,
+          and improve behavioral patterns for neurodivergent individuals.
+        </p>
+        <Button className="text-lg px-6 py-3 rounded-2xl shadow-md" aria-label="Get Started">
+          Get Started <ArrowRight className="ml-2" />
+        </Button>
+      </section>
 
-    <section aria-labelledby="mission">
-      <h2 id="mission">Mission</h2>
-      <p>We aim to streamline behavioral and emotional tracking through intuitive, customizable logging and analysis tools, enabling parents, caregivers, and healthcare professionals to provide personalized care to neurodiverse individuals.</p>
-    </section>
+      {/* Feature Cards */}
+      <section className="grid md:grid-cols-3 gap-8 px-8 md:px-16 lg:px-32 py-16">
+        <Card>
+          <CardContent className="p-6">
+            <h2 className="text-xl font-bold mb-2">Track with Ease</h2>
+            <p className="text-gray-600">
+              Log daily emotional states, meltdowns, sensory input, and calming strategies through a
+              user-friendly interface.
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-6">
+            <h2 className="text-xl font-bold mb-2">Visualize Trends</h2>
+            <p className="text-gray-600">
+              Spot behavioral patterns across days, weeks, and months using interactive graphs.
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-6">
+            <h2 className="text-xl font-bold mb-2">Export & Share</h2>
+            <p className="text-gray-600">
+              Generate secure PDF summaries for therapist consultations, IEP meetings, and more.
+            </p>
+          </CardContent>
+        </Card>
+      </section>
 
-    <section aria-labelledby="who">
-      <h2 id="who">Who is CalmTrack for?</h2>
-      <p>CalmTrack is built for individuals and families affected by conditions such as:</p>
-      <ul>
-        <li><strong>Autism Spectrum Disorder (ASD)</strong> – affecting ~1 in 36 children</li>
-        <li><strong>ADHD</strong> – impacts approximately 8.7% of children and 4.4% of adults globally</li>
-        <li><strong>Sensory Processing Disorder (SPD)</strong> – commonly co-occurs with autism and other conditions</li>
-        <li><strong>Tourette Syndrome</strong> – affects 1 in 162 children in the U.S.</li>
-        <li><strong>Anxiety Disorders</strong> – impact about 7.1% of children and over 30% of adults at some stage</li>
-        <li><strong>Other neurodevelopmental and behavioral challenges</strong></li>
-      </ul>
-      <p>Many of these individuals require ongoing clinical care and benefit from consistent behavioral tracking.</p>
-    </section>
+      {/* Why CalmTrack / Pitch */}
+      <section className="bg-white/80 py-10 px-8 md:px-16 lg:px-32 text-center">
+        <h2 className="text-3xl font-bold mb-2">Why CalmTrack?</h2>
+        <p className="text-lg max-w-3xl mx-auto mb-4">
+          CalmTrack isn't just a tracker. It's a calm intelligence tool — helping neurodivergent individuals and families see the unseen.
+          By offering real-world behavioral insights, CalmTrack can become the default app for neuro-behavioral reflection and growth. It's a mirror for the nervous system, day by day — something millions are quietly craving.
+        </p>
+      </section>
 
-    <section aria-labelledby="features">
-      <h2 id="features">Key Features</h2>
-      <ul>
-        <li><strong>📝 Daily Behavior & Emotion Logging</strong>
-          <ul>
-            <li>Score emotions such as anxiety, frustration, happiness, etc.</li>
-            <li>Capture incidents, context, and reactions objectively</li>
-            <li>Input from parents, individuals, or caregivers</li>
+      {/* Neurodiversity Buttons */}
+      <section className="text-center py-20 px-8 md:px-16 lg:px-32">
+        <h2 className="text-3xl font-bold mb-4">Built for Neurodiversity</h2>
+        <p className="text-gray-700 max-w-3xl mx-auto mb-8">
+          CalmTrack is designed for Autism, ADHD, Sensory Processing Disorder, and other neurodevelopmental differences.
+          Learn more about these conditions from trusted resources:
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center">
+          <a
+            href="https://www.autism.org.uk/what-is-autism"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Learn more about Autism on the National Autistic Society"
+            title="Autism information (National Autistic Society)"
+          >
+            <Button className="w-full">Autism</Button>
+          </a>
+          <a
+            href="https://www.cdc.gov/ncbddd/adhd/facts.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Learn more about ADHD on the CDC website"
+            title="ADHD information (CDC)"
+          >
+            <Button className="w-full">ADHD</Button>
+          </a>
+          <a
+            href="https://www.spdstar.org/basic/understanding-sensory-processing-disorder"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Learn more about Sensory Processing Disorder at STAR Institute"
+            title="Sensory Processing Disorder (STAR Institute)"
+          >
+            <Button className="w-full">Sensory Processing Disorder</Button>
+          </a>
+          <a
+            href="https://www.tourettes-action.org.uk/about-tourettes.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Learn more about Tourette Syndrome on Tourettes Action UK"
+            title="Tourette Syndrome (Tourettes Action UK)"
+          >
+            <Button className="w-full">Tourette Syndrome</Button>
+          </a>
+          <a
+            href="https://www.nimh.nih.gov/health/topics/anxiety-disorders"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Learn more about Anxiety Disorders at NIMH"
+            title="Anxiety Disorders (National Institute of Mental Health)"
+          >
+            <Button className="w-full">Anxiety Disorders</Button>
+          </a>
+          <a
+            href="https://www.nhs.uk/mental-health/conditions/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Learn more about other mental health conditions at NHS"
+            title="Other Mental Health Conditions (NHS)"
+          >
+            <Button className="w-full">Other Conditions</Button>
+          </a>
+        </div>
+      </section>
+
+      {/* Privacy & Data Handling */}
+      <section className="py-12 px-8 md:px-16 lg:px-32">
+        <h2 className="text-2xl font-bold mb-4 text-center">Data Privacy & Protection</h2>
+        <div className="max-w-3xl mx-auto bg-blue-50 border-l-4 border-blue-400 p-6 rounded-lg text-left shadow">
+          <ul className="list-disc pl-6 space-y-2 text-base">
+            <li>
+              <b>Local-First Storage:</b> Your data is securely stored on <b>your own device</b> by default. Only you have access unless you choose to export or back up.
+            </li>
+            <li>
+              <b>Encryption at Rest:</b> Data is encrypted on your device to help protect against unauthorized access.
+            </li>
+            <li>
+              <b>No Automatic Data Sharing:</b> We never share your behavioral records or personal data with any server or third party unless you <b>explicitly</b> choose to export or email it.
+            </li>
+            <li>
+              <b>No Tracking or Analytics:</b> CalmTrack does <u>not</u> use cookies, trackers, or analytics scripts.
+            </li>
+            <li>
+              <b>Full Control:</b> You can delete your data at any time from within the app — no hidden backups.
+            </li>
           </ul>
-        </li>
-        <li><strong>🔔 Trigger Identification</strong>
-          <ul>
-            <li>Track environmental or social triggers (e.g., noise, transitions)</li>
-            <li>Customize known patterns (e.g., crowds, specific people, fatigue)</li>
-          </ul>
-        </li>
-        <li><strong>📈 Trends & Graphical Insights</strong>
-          <ul>
-            <li>See emotional or behavioral trends over days, weeks, months</li>
-            <li>Visualize improvements, regressions, or consistent triggers</li>
-          </ul>
-        </li>
-        <li><strong>📅 History & Reports</strong>
-          <ul>
-            <li>Choose a custom date range to view past entries</li>
-            <li>Export reports for medical reviews, educational plans, or personal reflection</li>
-            <li>Email summaries to doctors, therapists, or caregivers securely</li>
-          </ul>
-        </li>
-      </ul>
-    </section>
+          <p className="mt-4 italic text-blue-900">
+            CalmTrack: Your data, your device, your rules.
+          </p>
+        </div>
+      </section>
 
-    <section aria-labelledby="privacy">
-      <h2 id="privacy">Data Privacy & Protection</h2>
-      <div class="privacy-facts">
-        <ul>
-          <li><strong>Local-First Storage:</strong> Your data is stored securely on your own device by default. This means your information remains private and under your control unless you choose to back it up or share it.</li>
-          <li><strong>Encryption at Rest:</strong> When CalmTrack stores information, it is encrypted on your device. This helps protect your data from unauthorized access.</li>
-          <li><strong>No Automatic Data Sharing:</strong> CalmTrack does <u>not</u> share your personal data or behavioral records with any third party or server unless you explicitly choose to export, email, or back up your data.</li>
-          <li><strong>Explicit User Actions:</strong> Only when you choose to generate a report or email a summary, is your data processed for that specific action, and never transmitted elsewhere without your consent.</li>
-          <li><strong>No Tracking or Analytics:</strong> We do not use cookies, trackers, or analytics scripts that collect behavioral or personal information.</li>
-          <li><strong>Transparent Controls:</strong> You can delete your data at any time from within the app. No hidden backups are made without your knowledge.</li>
-        </ul>
-        <p style="margin-top:1rem;"><em>We designed CalmTrack to put you in control. Our privacy approach is simple: your data, your device, your rules.</em></p>
-      </div>
-      <!-- ![image1](image1) -->
-    </section>
+      {/* Final Thought */}
+      <section className="py-8 px-8 md:px-16 lg:px-32 text-center">
+        <blockquote className="text-xl italic text-blue-800 font-medium max-w-2xl mx-auto">
+          🧩 CalmTrack is not just a tracker. It's a calm intelligence tool — helping neurodivergent individuals and families see the unseen.
+        </blockquote>
+      </section>
 
-    <section aria-labelledby="status">
-      <h2 id="status">Project Status</h2>
-      <p>We’re currently in development. Beta testing will launch soon. Thank you for your interest and support.</p>
-      <p><strong>Contact us:</strong> <a href="mailto:hello@calmtrack.app">hello@calmtrack.app</a></p>
-    </section>
-
-    <!-- Optional: Early interest form
-    <section aria-labelledby="signup">
-      <h2 id="signup">Sign Up for Beta</h2>
-      <form>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required aria-required="true" />
-        <button type="submit">Notify Me</button>
-      </form>
-    </section>
-    -->
-  </main>
-
-  <footer>
-    <p>&copy; 2025 CalmTrack | Built for Families, Backed by Science</p>
-  </footer>
-</body>
-</html>
+      {/* Footer */}
+      <footer className="bg-blue-200 py-6 text-center">
+        <p className="text-gray-700">&copy; {new Date().getFullYear()} CalmTrack. All rights reserved.</p>
+      </footer>
+    </main>
+  );
+}
