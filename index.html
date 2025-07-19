@@ -28,11 +28,13 @@
       box-shadow: 0 2px 8px 0 rgba(59,130,246,0.04);
     }
     header h1 {
+      font-family: 'Segoe UI', 'Arial', sans-serif;
       font-size: 2.7rem;
       margin-bottom: 0.3rem;
       font-weight: 900;
       letter-spacing: -1.5px;
       text-align: center;
+      /* Branding: not bold, but extra weight for presence */
     }
     header p {
       font-size: 1.3rem;
@@ -50,26 +52,16 @@
     }
     section {
       margin-bottom: 2.5rem;
-      text-align: left;
     }
-    h2 {
-      color: #1d4ed8;
+    .center-heading {
+      text-align: center;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
       font-size: 1.55rem;
       font-weight: 800;
       margin-top: 2rem;
       margin-bottom: 1rem;
       letter-spacing: -0.6px;
-      text-align: left;
     }
-    h3 {
-      color: #2563eb;
-      font-size: 1.14rem;
-      font-weight: 700;
-      margin-top: 0;
-      margin-bottom: .5rem;
-    }
-
-    /* Feature grid like screenshot */
     .feature-grid {
       display: flex;
       gap: 1.5rem;
@@ -103,8 +95,6 @@
     .feature-card li {
       margin-bottom: 0.4rem;
     }
-
-    /* Pitch box */
     .pitch {
       background: #dbeafe;
       color: #1e293b;
@@ -117,8 +107,6 @@
       text-align: center;
       font-weight: 500;
     }
-
-    /* Consistent button grid */
     .condition-edu-grid {
       display: flex;
       flex-wrap: wrap;
@@ -152,8 +140,6 @@
       transform: translateY(-2px) scale(1.03);
       text-decoration: underline;
     }
-
-    /* Privacy section */
     .privacy-facts {
       background: #f1f5f9;
       border-left: 4px solid #3b82f6;
@@ -168,8 +154,6 @@
       padding: 0;
       list-style: disc inside;
     }
-
-    /* Security/Peace of Mind section - customer focus */
     .reassure-section {
       background: #e0e7ff;
       padding: 1.4rem 1.7rem;
@@ -200,8 +184,7 @@
     .reassure-section li b {
       font-weight: 700;
     }
-
-    /* Community section - indirect message */
+    /* Community section - indirect message, centered heading, same CalmTrack style as header (not bold) */
     .community-section {
       background: #f0fdf4;
       border-left: 5px solid #22c55e;
@@ -214,11 +197,17 @@
       text-align: left;
       font-style: italic;
     }
-    .community-section strong {
-      color: #059669;
-      font-weight: 700;
+    .community-heading {
+      text-align: center;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 400;
+      letter-spacing: -0.6px;
+      color: #1f2937;
+      margin-top: 0;
+      margin-bottom: 1.2rem;
+      /* No bold, same as Welcome to CalmTrack, branding match */
     }
-
     .final-thought {
       text-align: center;
       font-size: 1.2rem;
@@ -255,7 +244,7 @@
       header h1 {
         font-size: 1.5rem;
       }
-      h2 {
+      .center-heading, .community-heading {
         font-size: 1.12rem;
       }
       .feature-card, .privacy-facts, .pitch, .community-section, .reassure-section {
@@ -279,19 +268,19 @@
   </header>
   <main>
     <section>
-      <h2>Vision</h2>
+      <h2 class="center-heading">Vision</h2>
       <p style="text-align:justify;">
         To empower individuals and caregivers with a simple yet powerful tool to track emotional and behavioral health, identify triggers, and facilitate well-informed care and decisions.
       </p>
     </section>
     <section>
-      <h2>Mission</h2>
+      <h2 class="center-heading">Mission</h2>
       <p style="text-align:justify;">
         We aim to streamline behavioral and emotional tracking through intuitive, customizable logging and analysis tools, enabling parents, caregivers, and healthcare professionals to provide personalized care to neurodiverse individuals.
       </p>
     </section>
     <section>
-      <h2>Key Features</h2>
+      <h2 class="center-heading">Key Features</h2>
       <div class="feature-grid">
         <div class="feature-card">
           <h3>📝 Track with Ease</h3>
@@ -326,7 +315,7 @@
       </div>
     </section>
     <section>
-      <h2>Built for Neurodiversity</h2>
+      <h2 class="center-heading">Built for Neurodiversity</h2>
       <p>
         CalmTrack is designed for Autism, ADHD, Sensory Processing Disorder, and other neurodevelopmental differences.<br>
         <strong>Learn more about these conditions from trusted resources:</strong>
@@ -349,9 +338,8 @@
       </ul>
       <p>Many of these individuals require ongoing clinical care and benefit from consistent behavioral tracking.</p>
     </section>
-    <!-- Customer-Focused Security Message (no pause mentioned, all bullet headings) -->
     <section class="reassure-section">
-      <h2>Your Data, Your Peace of Mind</h2>
+      <h2 style="text-align:center;font-family:'Segoe UI','Arial',sans-serif;font-weight:800;font-size:1.23rem;color:#6366f1;letter-spacing:-0.5px;margin-top:0;margin-bottom:1.1rem;">Your Data, Your Peace of Mind</h2>
       <ul>
         <li><b>Data is always encrypted and protected on your device</b> — your family's information stays safe and private, always.</li>
         <li><b>Automatic protection</b> — CalmTrack quietly safeguards your information while you focus on what matters.</li>
@@ -361,7 +349,7 @@
       <p style="margin-top:1rem;font-style:italic;">We don't just promise privacy—it's at the heart of every decision and update.</p>
     </section>
     <section>
-      <h2>Data Privacy & Protection</h2>
+      <h2 class="center-heading">Data Privacy & Protection</h2>
       <div class="privacy-facts">
         <ul>
           <li><strong>Local-First Storage:</strong> Your data is stored securely on your own device by default. This means your information remains private and under your control unless you choose to back it up or share it.</li>
@@ -374,8 +362,9 @@
         <p style="margin-top:1rem;"><em>We designed CalmTrack to put you in control. Our privacy approach is simple: your data, your device, your rules.</em></p>
       </div>
     </section>
-    <!-- Re-imagined Community Section: Indirect Contribution Message -->
+    <!-- Re-imagined Community Section: Centered heading, not bold, same font, indirect contribution message -->
     <section class="community-section">
+      <div class="community-heading">CalmTrack</div>
       <p>
         When many voices are heard, new understandings emerge. CalmTrack is a shared space where moments—big and small—are noticed, valued, and reflected. Over time, these insights ripple outward, lighting the way for others and quietly shaping a world that listens with more patience, acts with more empathy, and embraces difference as strength.
       </p>
@@ -387,7 +376,7 @@
       </div>
     </section>
     <section>
-      <h2>Project Status</h2>
+      <h2 class="center-heading">Project Status</h2>
       <p>We’re currently in development. Beta testing will launch soon. Thank you for your interest and support.</p>
       <p><strong>Contact us:</strong>
         <a href="mailto:info@calmtrack.net">info@calmtrack.net</a> |
