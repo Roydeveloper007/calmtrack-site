@@ -7,7 +7,7 @@
   <meta property="og:title" content="CalmTrack – Empowering Neurodiverse Care" />
   <meta property="og:description" content="A digital diary and insight tool for neurodiverse conditions. Track, analyze, and report with privacy and science at the core." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.calmtrack.app/" />
+  <meta property="og:url" content="https://www.calmtrack.net/" />
   <title>CalmTrack – Empowering Neurodiverse Care</title>
   <link rel="icon" href="/favicon.ico" />
   <style>
@@ -125,16 +125,21 @@
       font-style: italic;
       letter-spacing: -0.1px;
     }
+    /* Improved Buttons Layout */
     .condition-edu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
       margin-top: 1.3rem;
       margin-bottom: 2rem;
-      justify-items: start;
+      justify-content: center;
+      align-items: flex-start;
     }
     .condition-btn {
-      display: inline-block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 170px;
       padding: 0.68rem 1.5rem;
       background: #3b82f6;
       color: #fff;
@@ -142,11 +147,11 @@
       border-radius: 2rem;
       font-size: 1.07rem;
       font-weight: 500;
-      text-align: left;
       cursor: pointer;
       transition: background 0.15s, transform 0.07s;
       text-decoration: none;
       box-shadow: 0 2px 7px #3b82f633;
+      margin-bottom: 0.5rem;
     }
     .condition-btn:hover, .condition-btn:focus {
       background: #1d4ed8;
@@ -175,6 +180,20 @@
       font-style: italic;
       font-weight: 500;
     }
+    .community-section {
+      background: #e0f2fe;
+      border-left: 5px solid #38bdf8;
+      border-radius: 8px;
+      padding: 1.3rem 1.7rem;
+      margin: 2.5rem 0 1.5rem 0;
+      font-size: 1.12rem;
+      color: #0e7490;
+      box-shadow: 0 2px 8px #7dd3fc55;
+    }
+    .community-section h2 {
+      color: #0ea5e9;
+      margin-top: 0;
+    }
     footer {
       text-align: center;
       font-size: 0.97rem;
@@ -202,8 +221,16 @@
       h2 {
         font-size: 1.12rem;
       }
-      .feature-card, .privacy-facts, .pitch {
+      .feature-card, .privacy-facts, .pitch, .community-section {
         padding: 1rem;
+      }
+      .condition-btn {
+        min-width: 100px;
+        font-size: 0.97rem;
+        padding: 0.5rem 1rem;
+      }
+      .condition-edu-grid {
+        gap: 0.5rem;
       }
     }
   </style>
@@ -308,6 +335,14 @@
       </div>
     </section>
 
+    <!-- Community Contribution Section -->
+    <section class="community-section" aria-labelledby="community">
+      <h2 id="community">What I Will Bring to the Community</h2>
+      <p>
+        CalmTrack is not just a product—it's a community-driven movement to make neurodiversity support accessible, practical, and empowering. I pledge to bring continual learning resources, opportunities for collaborative development, and a safe space for caregivers and neurodiverse individuals to share feedback, stories, and needs. Together, we will refine CalmTrack with real-world input, champion privacy-first health technology, and foster a culture of understanding and inclusion.
+      </p>
+    </section>
+
     <!-- Final Thought / Emotional Close -->
     <section>
       <div class="final-thought">
@@ -320,7 +355,10 @@
     <section aria-labelledby="status">
       <h2 id="status">Project Status</h2>
       <p>We’re currently in development. Beta testing will launch soon. Thank you for your interest and support.</p>
-      <p><strong>Contact us:</strong> <a href="mailto:hello@calmtrack.app">hello@calmtrack.app</a></p>
+      <p><strong>Contact us:</strong>
+        <a href="mailto:info@calmtrack.net">info@calmtrack.net</a> |
+        <a href="mailto:support@calmtrack.net">support@calmtrack.net</a>
+      </p>
     </section>
   </main>
 
