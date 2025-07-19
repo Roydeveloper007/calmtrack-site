@@ -11,11 +11,14 @@
   <title>CalmTrack – Empowering Neurodiverse Care</title>
   <link rel="icon" href="/favicon.ico" />
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    html, body {
       margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
       background: #f9fafb;
       color: #1f2937;
+      font-size: 18px;
+      line-height: 1.6;
     }
     header {
       background: linear-gradient(90deg, #3b82f6 70%, #60a5fa 100%);
@@ -27,159 +30,182 @@
     header h1 {
       font-size: 2.7rem;
       margin-bottom: 0.3rem;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: -1.5px;
+      text-align: center;
     }
     header p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       margin-bottom: 1.5rem;
+      font-weight: 500;
+      text-align: center;
     }
     .hero-btn {
       background: #fff;
       color: #1d4ed8;
-      font-weight: 600;
+      font-weight: 700;
       border: none;
       border-radius: 2rem;
       padding: 0.8rem 2.2rem;
-      font-size: 1.15rem;
+      font-size: 1.17rem;
       box-shadow: 0 2px 8px rgba(59,130,246,0.08);
       cursor: pointer;
       transition: background 0.15s, color 0.15s;
       margin-top: 0.8rem;
+      text-align: center;
     }
     .hero-btn:hover, .hero-btn:focus {
       background: #1d4ed8;
       color: #fff;
     }
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      z-index: 100;
-      background: #fff;
-      color: #1d4ed8;
-      padding: 8px;
-    }
-    .skip-link:focus {
-      left: 1rem;
-      top: 1rem;
-      width: auto;
-      height: auto;
-      font-weight: bold;
-      box-shadow: 0 0 2px #1d4ed8;
-    }
     main {
-      max-width: 950px;
-      margin: 2rem auto;
-      padding: 1.5rem;
+      max-width: 960px;
+      margin: 2.5rem auto;
+      padding: 2.2rem 2rem;
       background: white;
-      border-radius: 12px;
-      box-shadow: 0 0 14px rgba(0,0,0,0.07);
+      border-radius: 14px;
+      box-shadow: 0 0 16px rgba(0,0,0,0.08);
     }
     section {
-      margin-bottom: 2.2rem;
+      margin-bottom: 2.5rem;
+      text-align: left;
     }
     h2 {
       color: #1d4ed8;
-      margin-top: 2rem;
       font-size: 1.55rem;
-      font-weight: 700;
+      font-weight: 800;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.6px;
+      text-align: left;
     }
-    ul {
-      padding-left: 1.2rem;
-    }
-    li {
-      margin-bottom: 0.5rem;
-    }
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.3rem;
-      margin-bottom: 1.8rem;
-      margin-top: 1rem;
-    }
-    .feature-card {
-      background: #f1f5f9;
-      border-radius: 7px;
-      padding: 1.1rem 1rem 1.2rem 1rem;
-      box-shadow: 0 2px 8px #93c5fd44;
-      min-height: 130px;
-    }
-    .feature-card h3 {
-      margin-top: 0;
-      margin-bottom: .5rem;
+    h3 {
       color: #2563eb;
       font-size: 1.14rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: .5rem;
     }
+
+    /* Feature grid like screenshot */
+    .feature-grid {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+      margin-top: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .feature-card {
+      background: #eef4ff;
+      border-radius: 12px;
+      padding: 1.1rem 1.3rem 1.2rem 1.3rem;
+      min-width: 245px;
+      max-width: 320px;
+      flex: 1 1 250px;
+      box-shadow: 0 2px 10px #93c5fd55;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      transition: box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      box-shadow: 0 6px 18px #60a5fa55;
+    }
+    .feature-card ul {
+      padding-left: 1.1rem;
+      margin: 0.4rem 0 0 0;
+      font-size: 1.01rem;
+    }
+    .feature-card li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Pitch box */
     .pitch {
-      background: #e0e7ff;
+      background: #dbeafe;
       color: #1e293b;
-      border-left: 5px solid #6366f1;
-      border-radius: 7px;
-      font-size: 1.09rem;
+      border-left: 5px solid #3b82f6;
+      border-radius: 8px;
+      font-size: 1.13rem;
       padding: 1.2rem 1.5rem;
-      margin: 2.8rem 0 2.2rem 0;
+      margin: 2.3rem 0 2.1rem 0;
       font-style: italic;
-      letter-spacing: -0.1px;
+      text-align: center;
+      font-weight: 500;
     }
-    /* Improved Buttons Layout */
+
+    /* Consistent button grid */
     .condition-edu-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      margin-top: 1.3rem;
-      margin-bottom: 2rem;
+      margin-top: 1.2rem;
+      margin-bottom: 1.7rem;
       justify-content: center;
       align-items: flex-start;
     }
     .condition-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 170px;
-      padding: 0.68rem 1.5rem;
+      min-width: 165px;
+      padding: 0.7rem 1.6rem;
       background: #3b82f6;
       color: #fff;
       border: none;
       border-radius: 2rem;
       font-size: 1.07rem;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
-      transition: background 0.15s, transform 0.07s;
+      transition: background 0.18s, transform 0.09s;
       text-decoration: none;
-      box-shadow: 0 2px 7px #3b82f633;
+      box-shadow: 0 2px 7px #3b82f655;
       margin-bottom: 0.5rem;
+      text-align: center;
     }
     .condition-btn:hover, .condition-btn:focus {
       background: #1d4ed8;
       transform: translateY(-2px) scale(1.03);
       text-decoration: underline;
     }
+
+    /* Privacy section */
     .privacy-facts {
       background: #f1f5f9;
       border-left: 4px solid #3b82f6;
-      padding: 1.2rem 1rem;
+      padding: 1.3rem 1.2rem;
       margin-top: 1rem;
-      border-radius: 6px;
+      border-radius: 8px;
       color: #1e293b;
+      font-size: 1.07rem;
     }
     .privacy-facts ul {
       margin: 0.5rem 0 0 1.2rem;
       padding: 0;
       list-style: disc inside;
     }
-    .final-thought {
-      text-align: center;
-      font-size: 1.2rem;
-      color: #1d4ed8;
-      margin-top: 2.5rem;
-      margin-bottom: 1.5rem;
-      font-style: italic;
-      font-weight: 500;
+
+    /* Security/Peace of Mind section - customer focus */
+    .reassure-section {
+      background: #e0e7ff;
+      padding: 1.4rem 1.7rem;
+      border-radius: 10px;
+      margin: 2rem 0 1.7rem 0;
+      font-size: 1.11rem;
+      color: #3730a3;
+      border-left: 7px solid #6366f1;
+      text-align: left;
+      box-shadow: 0 2px 10px #6366f122;
     }
+    .reassure-section h2 {
+      color: #6366f1;
+      margin-top: 0;
+      font-size: 1.23rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-align: left;
+    }
+
+    /* Community section */
     .community-section {
       background: #e0f2fe;
       border-left: 5px solid #38bdf8;
@@ -189,10 +215,20 @@
       font-size: 1.12rem;
       color: #0e7490;
       box-shadow: 0 2px 8px #7dd3fc55;
+      text-align: left;
     }
     .community-section h2 {
       color: #0ea5e9;
       margin-top: 0;
+    }
+    .final-thought {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #1d4ed8;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      font-weight: 500;
     }
     footer {
       text-align: center;
@@ -206,9 +242,12 @@
     a {
       color: #2563eb;
       text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
     }
     a:hover, a:focus {
       text-decoration: underline;
+      color: #1d4ed8;
     }
     @media (max-width: 600px) {
       main {
@@ -221,11 +260,11 @@
       h2 {
         font-size: 1.12rem;
       }
-      .feature-card, .privacy-facts, .pitch, .community-section {
+      .feature-card, .privacy-facts, .pitch, .community-section, .reassure-section {
         padding: 1rem;
       }
       .condition-btn {
-        min-width: 100px;
+        min-width: 110px;
         font-size: 0.97rem;
         padding: 0.5rem 1rem;
       }
@@ -236,27 +275,26 @@
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
     <h1>Welcome to CalmTrack</h1>
     <p>A Digital Diary and Insight Tool for Neurodiverse Conditions</p>
     <button class="hero-btn" aria-label="Get Started">Get Started</button>
   </header>
-
-  <main id="main-content">
-    <!-- Vision & Mission -->
-    <section aria-labelledby="vision">
-      <h2 id="vision">Vision</h2>
-      <p>To empower individuals and caregivers with a simple yet powerful tool to track emotional and behavioral health, identify triggers, and facilitate well-informed care and medical decisions.</p>
+  <main>
+    <section>
+      <h2>Vision</h2>
+      <p style="text-align:justify;">
+        To empower individuals and caregivers with a simple yet powerful tool to track emotional and behavioral health, identify triggers, and facilitate well-informed care and decisions.
+      </p>
     </section>
-    <section aria-labelledby="mission">
-      <h2 id="mission">Mission</h2>
-      <p>We aim to streamline behavioral and emotional tracking through intuitive, customizable logging and analysis tools, enabling parents, caregivers, and healthcare professionals to provide personalized care to neurodiverse individuals.</p>
+    <section>
+      <h2>Mission</h2>
+      <p style="text-align:justify;">
+        We aim to streamline behavioral and emotional tracking through intuitive, customizable logging and analysis tools, enabling parents, caregivers, and healthcare professionals to provide personalized care to neurodiverse individuals.
+      </p>
     </section>
-
-    <!-- Feature Cards -->
-    <section aria-labelledby="features">
-      <h2 id="features">Key Features</h2>
+    <section>
+      <h2>Key Features</h2>
       <div class="feature-grid">
         <div class="feature-card">
           <h3>📝 Track with Ease</h3>
@@ -284,29 +322,25 @@
         </div>
       </div>
     </section>
-
-    <!-- Emotional Pitch: Calm Intelligence Tool -->
     <section>
       <div class="pitch">
         CalmTrack isn't just a tracker. It's a calm intelligence tool — helping neurodivergent individuals and families see the unseen.<br>
         By offering real-world behavioral insights, CalmTrack can become the default app for neuro-behavioral reflection and growth. It's a mirror for the nervous system, day by day — something millions are quietly craving.
       </div>
     </section>
-
-    <!-- Neurodiversity Condition Buttons -->
-    <section aria-labelledby="who">
-      <h2 id="who">Built for Neurodiversity</h2>
+    <section>
+      <h2>Built for Neurodiversity</h2>
       <p>
         CalmTrack is designed for Autism, ADHD, Sensory Processing Disorder, and other neurodevelopmental differences.<br>
         <strong>Learn more about these conditions from trusted resources:</strong>
       </p>
       <div class="condition-edu-grid">
-        <a href="https://www.autism.org.uk/what-is-autism" class="condition-btn" target="_blank" rel="noopener noreferrer" aria-label="Autism - Learn more from National Autistic Society" title="Autism (National Autistic Society)">Autism</a>
-        <a href="https://www.cdc.gov/ncbddd/adhd/facts.html" class="condition-btn" target="_blank" rel="noopener noreferrer" aria-label="ADHD - Learn more from CDC" title="ADHD (CDC)">ADHD</a>
-        <a href="https://www.spdstar.org/basic/understanding-sensory-processing-disorder" class="condition-btn" target="_blank" rel="noopener noreferrer" aria-label="Sensory Processing Disorder - Learn more from STAR Institute" title="Sensory Processing Disorder (STAR Institute)">Sensory Processing Disorder</a>
-        <a href="https://www.tourettes-action.org.uk/about-tourettes.html" class="condition-btn" target="_blank" rel="noopener noreferrer" aria-label="Tourette Syndrome - Learn more from Tourettes Action UK" title="Tourette Syndrome (Tourettes Action UK)">Tourette Syndrome</a>
-        <a href="https://www.nimh.nih.gov/health/topics/anxiety-disorders" class="condition-btn" target="_blank" rel="noopener noreferrer" aria-label="Anxiety Disorders - Learn more from NIMH" title="Anxiety Disorders (NIMH)">Anxiety Disorders</a>
-        <a href="https://www.nhs.uk/mental-health/conditions/" class="condition-btn" target="_blank" rel="noopener noreferrer" aria-label="Other Conditions - Learn more from NHS" title="Other Conditions (NHS)">Other Conditions</a>
+        <a href="https://www.autism.org.uk/what-is-autism" class="condition-btn" target="_blank" rel="noopener noreferrer" title="Autism (National Autistic Society)">Autism</a>
+        <a href="https://www.cdc.gov/ncbddd/adhd/facts.html" class="condition-btn" target="_blank" rel="noopener noreferrer" title="ADHD (CDC)">ADHD</a>
+        <a href="https://www.spdstar.org/basic/understanding-sensory-processing-disorder" class="condition-btn" target="_blank" rel="noopener noreferrer" title="SPD (STAR Institute)">Sensory Processing Disorder</a>
+        <a href="https://www.tourettes-action.org.uk/about-tourettes.html" class="condition-btn" target="_blank" rel="noopener noreferrer" title="Tourette Syndrome (Tourettes Action UK)">Tourette Syndrome</a>
+        <a href="https://www.nimh.nih.gov/health/topics/anxiety-disorders" class="condition-btn" target="_blank" rel="noopener noreferrer" title="Anxiety Disorders (NIMH)">Anxiety Disorders</a>
+        <a href="https://www.nhs.uk/mental-health/conditions/" class="condition-btn" target="_blank" rel="noopener noreferrer" title="Other Conditions (NHS)">Other Conditions</a>
       </div>
       <ul>
         <li><strong>Autism Spectrum Disorder (ASD)</strong> – affecting ~1 in 36 children</li>
@@ -318,10 +352,23 @@
       </ul>
       <p>Many of these individuals require ongoing clinical care and benefit from consistent behavioral tracking.</p>
     </section>
-
-    <!-- Data Privacy & Protection -->
-    <section aria-labelledby="privacy">
-      <h2 id="privacy">Data Privacy & Protection</h2>
+    <!-- Customer-Focused Security Message -->
+    <section class="reassure-section">
+      <h2>Your Data, Your Peace of Mind</h2>
+      <p>
+        At CalmTrack, we understand how important your privacy and trust are. This week, we strengthened your data protection even further, so you can use CalmTrack with total confidence:
+      </p>
+      <ul>
+        <li><b>Data is always encrypted and protected on your device</b>—keeping your family's information safe and private.</li>
+        <li><b>Automatic security</b> works in the background, so you don't have to worry about technical details.</li>
+        <li><b>You stay in control</b>: your data is never shared, sold, or sent to anyone unless you choose to do so.</li>
+        <li><b>Easy to pause</b>: If you ever want to temporarily pause security features, it's just a click away—giving you flexibility as well as privacy.</li>
+        <li>Everything we do is with your peace of mind in mind—so you can focus on what matters most: your loved one's well-being.</li>
+      </ul>
+      <p style="margin-top:1rem;"><em>We don't just promise privacy—it's at the heart of every decision and update.</em></p>
+    </section>
+    <section>
+      <h2>Data Privacy & Protection</h2>
       <div class="privacy-facts">
         <ul>
           <li><strong>Local-First Storage:</strong> Your data is stored securely on your own device by default. This means your information remains private and under your control unless you choose to back it up or share it.</li>
@@ -334,26 +381,20 @@
         <p style="margin-top:1rem;"><em>We designed CalmTrack to put you in control. Our privacy approach is simple: your data, your device, your rules.</em></p>
       </div>
     </section>
-
-    <!-- Community Contribution Section -->
-    <section class="community-section" aria-labelledby="community">
-      <h2 id="community">What I Will Bring to the Community</h2>
+    <section class="community-section">
+      <h2>What I Will Bring to the Community</h2>
       <p>
         CalmTrack is not just a product—it's a community-driven movement to make neurodiversity support accessible, practical, and empowering. I pledge to bring continual learning resources, opportunities for collaborative development, and a safe space for caregivers and neurodiverse individuals to share feedback, stories, and needs. Together, we will refine CalmTrack with real-world input, champion privacy-first health technology, and foster a culture of understanding and inclusion.
       </p>
     </section>
-
-    <!-- Final Thought / Emotional Close -->
     <section>
       <div class="final-thought">
         🧩 CalmTrack is not just a tracker.<br>
         It's a calm intelligence tool — helping neurodivergent individuals and families see the unseen.
       </div>
     </section>
-
-    <!-- Status and Contact -->
-    <section aria-labelledby="status">
-      <h2 id="status">Project Status</h2>
+    <section>
+      <h2>Project Status</h2>
       <p>We’re currently in development. Beta testing will launch soon. Thank you for your interest and support.</p>
       <p><strong>Contact us:</strong>
         <a href="mailto:info@calmtrack.net">info@calmtrack.net</a> |
@@ -361,7 +402,6 @@
       </p>
     </section>
   </main>
-
   <footer>
     <p>&copy; 2025 CalmTrack | Built for Families, Backed by Science</p>
   </footer>
