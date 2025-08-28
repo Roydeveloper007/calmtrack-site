@@ -1,0 +1,8 @@
+version: 2
+allowlist:
+  # Firebase Web API keys are not secrets; allow this repo's pages.
+  descriptions:
+    - "Allow Firebase Web API key used for client-side initialization"
+  regexes:
+    # Generic 'AIza' style keys - limit to this repo to avoid masking real leaks elsewhere.
+    - 'AIza[0-9A-Za-z\-_]{35}'
