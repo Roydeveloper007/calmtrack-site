@@ -9,16 +9,19 @@
     :root{--brand:#375DFB;--ink:#0f172a;--bg:#f8fafc;--card:#fff;}
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    .wrap{max-width:420px;margin:6vh auto;padding:16px}
-    .card{background:var(--card);border-radius:14px;box-shadow:0 10px 24px rgba(0,0,0,.06);padding:18px}
+    .wrap{max-width:480px;margin:6vh auto;padding:16px}
+    .card{background:var(--card);border-radius:14px;box-shadow:0 10px 24px rgba(0,0,0,.06);padding:22px}
     h1{font-size:22px;margin:0 0 6px}
     .muted{color:#475569;font-size:14px;margin:0 0 14px}
     label{font-weight:600;font-size:14px}
     input{width:100%;border:1px solid #e2e8f0;border-radius:10px;padding:10px 12px;margin:6px 0 12px}
     button{width:100%;background:var(--brand);color:#fff;border:none;border-radius:10px;padding:11px 14px;font-weight:700;cursor:pointer}
+    button.secondary{background:#e2e8f0;color:#0f172a}
     button:disabled{opacity:.6;cursor:not-allowed}
     .ok{color:#16a34a;font-weight:700}
     .err{color:#dc2626;font-weight:700}
+    .spacer{height:10px}
+    .center{display:flex;gap:10px;flex-direction:column;align-items:stretch;margin-top:10px}
   </style>
 </head>
 <body>
@@ -27,6 +30,7 @@
       <h1 id="title">Processing…</h1>
       <p id="desc" class="muted">Please wait.</p>
 
+      <!-- Password reset form -->
       <div id="resetForm" style="display:none">
         <label for="pwd">New password</label>
         <input id="pwd" type="password" autocomplete="new-password" placeholder="Enter a strong password"/>
@@ -34,6 +38,12 @@
         <input id="pwd2" type="password" autocomplete="new-password" placeholder="Re-type password"/>
         <button id="submitReset">Set new password</button>
         <p id="resetMsg" class="muted"></p>
+      </div>
+
+      <div class="center">
+        <a id="returnLink" href="https://calmtrack.net" style="text-align:center;text-decoration:none">
+          <button class="secondary" type="button">Return to CalmTrack</button>
+        </a>
       </div>
     </div>
   </div>
@@ -48,13 +58,15 @@
       confirmPasswordReset
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-    // IMPORTANT: this file expects you already have Web app credentials.
-    // Replace with your existing firebase_options if you prefer.
+    // --- Your Firebase web app config (production) ---
     const firebaseConfig = {
-      apiKey: "YOUR_WEB_API_KEY",
+      apiKey: "AIzaSyCoLaqLTmxU9PyTRYPJTzKFC_sp8Mxfswk",
       authDomain: "quantum-boulder-468219-v8.firebaseapp.com",
       projectId: "quantum-boulder-468219-v8",
-      appId: "YOUR_WEB_APP_ID"
+      storageBucket: "quantum-boulder-468219-v8.firebasestorage.app",
+      messagingSenderId: "398997046296",
+      appId: "1:398997046296:web:6159b0ea8f77ff8544af6d"
+      // measurementId is optional and not needed here
     };
 
     const app = initializeApp(firebaseConfig);
@@ -63,29 +75,44 @@
     const params = new URLSearchParams(location.search);
     const mode = params.get('mode');
     const oobCode = params.get('oobCode');
+    const continueUrl = params.get('continueUrl');  // if you set it in ActionCodeSettings
+    const lang = params.get('lang') || 'en';
 
     const title = document.getElementById('title');
     const desc  = document.getElementById('desc');
     const form  = document.getElementById('resetForm');
     const btn   = document.getElementById('submitReset');
     const msg   = document.getElementById('resetMsg');
+    const returnLink = document.getElementById('returnLink');
+
+    // If a continueUrl is included, send the user there on “Return”
+    if (continueUrl) {
+      try {
+        const url = new URL(continueUrl);
+        returnLink.href = url.toString();
+      } catch { /* ignore invalid URL */ }
+    }
+
+    function setError(text) {
+      title.textContent = "There was a problem";
+      desc.innerHTML = `<span class="err">${text}</span>`;
+    }
 
     async function doVerifyEmail() {
       try {
         await applyActionCode(auth, oobCode);
         title.textContent = "Email verified ✅";
-        desc.innerHTML = "Your email has been successfully verified. You can return to the app and sign in.";
+        desc.innerHTML = "Thanks! Your email is now verified. You can return to the CalmTrack app and sign in.";
       } catch (e) {
-        title.textContent = "Verification error";
-        desc.innerHTML = `<span class="err">${e.message || e}</span>`;
+        setError(e?.message || e);
       }
     }
 
     async function doResetPassword() {
       try {
-        // Pre-validate the code to show form
+        // Validate the code before showing the form (so we can show friendly errors)
         await checkActionCode(auth, oobCode);
-        title.textContent = "Reset password";
+        title.textContent = "Reset your password";
         desc.textContent  = "Enter and confirm your new password.";
         form.style.display = 'block';
 
@@ -94,32 +121,39 @@
           msg.textContent = "";
           const p1 = document.getElementById('pwd').value;
           const p2 = document.getElementById('pwd2').value;
-          if (!p1 || p1 !== p2) {
+
+          if (!p1 || p1.length < 8) {
+            msg.innerHTML = `<span class="err">Password must be at least 8 characters.</span>`;
+            btn.disabled = false;
+            return;
+          }
+          if (p1 !== p2) {
             msg.innerHTML = `<span class="err">Passwords must match.</span>`;
             btn.disabled = false;
             return;
           }
           try {
             await confirmPasswordReset(auth, oobCode, p1);
-            msg.innerHTML = `<span class="ok">Password changed. You can now open the app and log in.</span>`;
+            msg.innerHTML = `<span class="ok">Password changed successfully. You can now open the app and log in.</span>`;
           } catch (e) {
-            msg.innerHTML = `<span class="err">${e.message || e}</span>`;
+            msg.innerHTML = `<span class="err">${e?.message || e}</span>`;
           } finally {
             btn.disabled = false;
           }
         }
       } catch (e) {
-        title.textContent = "Reset link error";
-        desc.innerHTML = `<span class="err">${e.message || e}</span>`;
+        setError(e?.message || e);
       }
     }
 
     (async () => {
       if (!mode || !oobCode) {
-        title.textContent = "Invalid link";
-        desc.textContent = "Missing or malformed parameters.";
+        setError("Invalid link – missing or malformed parameters.");
         return;
       }
+      // Localize if needed (Firebase honors ?lang=… on some flows)
+      try { auth.languageCode = lang; } catch {}
+
       if (mode === 'verifyEmail') {
         await doVerifyEmail();
       } else if (mode === 'resetPassword') {
