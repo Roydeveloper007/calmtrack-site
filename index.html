@@ -20,7 +20,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- Custom Font: The Seasons -->
   <style>
+    /* Import The Seasons font - You'll need to replace the URL with the actual path to your font files */
+    @font-face {
+      font-family: 'The Seasons';
+      src: url('fonts/TheSeasons-Regular.woff2') format('woff2'),
+           url('fonts/TheSeasons-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    
+    @font-face {
+      font-family: 'The Seasons';
+      src: url('fonts/TheSeasons-Bold.woff2') format('woff2'),
+           url('fonts/TheSeasons-Bold.woff') format('woff');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
+    
     :root {
       /* Modern color palette */
       --primary: #4361ee;
@@ -79,9 +99,10 @@
       font-size: 16px;
     }
     
-    /* Typography */
+    /* Typography with The Seasons font for headings */
     h1, h2, h3, h4, h5, h6 {
-      font-weight: 800;
+      font-family: 'The Seasons', serif;
+      font-weight: bold;
       line-height: 1.2;
       margin-bottom: var(--space-md);
       letter-spacing: -0.025em;
@@ -163,14 +184,14 @@
       margin-right: auto;
     }
     
-    /* Logo styling */
+    /* Logo styling with The Seasons font */
     .logo {
       margin-bottom: var(--space-lg);
     }
     
     .logo-text {
-      font-family: 'Inter', sans-serif;
-      font-weight: 800;
+      font-family: 'The Seasons', serif;
+      font-weight: bold;
       font-size: 2.5rem;
       letter-spacing: -0.03em;
       background: linear-gradient(135deg, var(--white) 0%, rgba(255,255,255,0.85) 100%);
@@ -259,6 +280,7 @@
     }
     
     .section-title {
+      font-family: 'The Seasons', serif;
       text-align: center;
       margin-bottom: var(--space-xl);
       position: relative;
@@ -338,8 +360,9 @@
     }
     
     .card h3 {
+      font-family: 'The Seasons', serif;
       margin-bottom: var(--space-md);
-      font-weight: 700;
+      font-weight: bold;
       font-size: 1.25rem;
       position: relative;
     }
@@ -502,6 +525,7 @@
     
     /* Final call to action */
     .final-thought {
+      font-family: 'The Seasons', serif;
       text-align: center;
       font-size: 1.5rem;
       font-weight: 700;
@@ -520,6 +544,13 @@
       color: var(--gray-700);
       margin-top: var(--space-xxl);
       border-top: 1px solid var(--gray-200);
+    }
+    
+    .footer .timestamp {
+      margin-top: var(--space-sm);
+      font-size: 0.85rem;
+      color: var(--gray-700);
+      opacity: 0.8;
     }
     
     /* App showcase styles */
@@ -599,6 +630,7 @@
     }
 
     .feature-content h3 {
+      font-family: 'The Seasons', serif;
       margin: 0 0 var(--space-xs);
       font-size: 1.1rem;
     }
@@ -744,6 +776,7 @@
     }
 
     .placeholder-text {
+      font-family: 'The Seasons', serif;
       font-size: 1.2rem;
       font-weight: 600;
     }
@@ -1220,6 +1253,7 @@
   <footer class="footer">
     <div class="container">
       <p>&copy; 2025 CalmTrack | Built for Families, Backed by Science</p>
+      <p class="timestamp">Last Updated: 2025-09-01 09:48:09</p>
     </div>
   </footer>
 
