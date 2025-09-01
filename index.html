@@ -13,12 +13,12 @@
   <meta property="og:description" content="A digital diary and insight tool for neurodiverse conditions. Track, analyze, and report with privacy and science at the core." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.calmtrack.net/" />
-  <meta name="theme-color" content="#4361ee" />
+  <meta name="theme-color" content="#65a9e5" />
 
   <link rel="icon" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Custom Font: The Seasons -->
   <style>
@@ -34,29 +34,24 @@
     
     @font-face {
       font-family: 'The Seasons';
-      src: url('fonts/TheSeasons-Bold.woff2') format('woff2'),
-           url('fonts/TheSeasons-Bold.woff') format('woff');
-      font-weight: bold;
+      src: url('fonts/TheSeasons-Light.woff2') format('woff2'),
+           url('fonts/TheSeasons-Light.woff') format('woff');
+      font-weight: 300;
       font-style: normal;
       font-display: swap;
     }
     
     :root {
-      /* Modern color palette */
-      --primary: #4361ee;
-      --primary-light: #738efc;
-      --primary-dark: #3a56d4;
-      --accent: #06d6a0;
-      --accent-light: #4ae3b5;
-      --warning: #f72585;
-      --dark: #0f172a;
-      --gray-900: #1e293b;
-      --gray-800: #334155;
-      --gray-700: #475569;
-      --gray-300: #cbd5e1;
-      --gray-200: #e2e8f0;
+      /* Brand colors - based on the images provided */
+      --primary: #65a9e5;      /* Light blue from logo */
+      --primary-light: #9bc7ee;
+      --primary-dark: #4c8bc7;
+      --bg-cream: #fdfcf5;     /* Off-white/cream background */
+      --ink: #516173;          /* Main text color - softer than black */
+      --ink-dark: #334155;     /* Darker text for headings */
+      --ink-light: #78879c;    /* Lighter text for captions */
       --gray-100: #f1f5f9;
-      --gray-50: #f8fafc;
+      --gray-200: #e2e8f0;
       --white: #ffffff;
       
       /* Spacing system */
@@ -67,10 +62,10 @@
       --space-xl: 2rem;
       --space-xxl: 3rem;
       
-      /* Shadows */
-      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.1);
-      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -1px rgba(15, 23, 42, 0.06);
-      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
+      /* Shadows - more subtle for the softer brand */
+      --shadow-sm: 0 1px 3px rgba(81, 97, 115, 0.08);
+      --shadow-md: 0 4px 6px -1px rgba(81, 97, 115, 0.08), 0 2px 4px -1px rgba(81, 97, 115, 0.04);
+      --shadow-lg: 0 10px 15px -3px rgba(81, 97, 115, 0.08), 0 4px 6px -2px rgba(81, 97, 115, 0.04);
       
       /* Border radius */
       --radius-sm: 0.25rem;
@@ -88,13 +83,13 @@
     
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 80px;
+      scroll-padding-top: 100px;
     }
     
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background-color: var(--gray-50);
-      color: var(--gray-900);
+      background-color: var(--bg-cream);
+      color: var(--ink);
       line-height: 1.6;
       font-size: 16px;
     }
@@ -102,18 +97,15 @@
     /* Typography with The Seasons font for headings */
     h1, h2, h3, h4, h5, h6 {
       font-family: 'The Seasons', serif;
-      font-weight: bold;
-      line-height: 1.2;
+      font-weight: normal;
+      line-height: 1.3;
       margin-bottom: var(--space-md);
-      letter-spacing: -0.025em;
+      color: var(--ink-dark);
     }
     
     h1 {
-      font-size: 3rem;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      font-size: 2.75rem;
+      color: var(--primary);
     }
     
     h2 {
@@ -123,7 +115,6 @@
     
     h3 {
       font-size: 1.25rem;
-      color: var(--gray-900);
     }
     
     p {
@@ -137,7 +128,7 @@
     }
     
     a:hover {
-      color: var(--primary-light);
+      color: var(--primary-dark);
     }
     
     /* Container */
@@ -147,26 +138,13 @@
       padding: 0 var(--space-lg);
     }
     
-    /* Header */
+    /* Header - now with off-white background matching the brand */
     .header {
       position: relative;
-      background: radial-gradient(circle at 10% 20%, var(--primary) 0%, var(--primary-dark) 90%);
-      color: var(--white);
-      overflow: hidden;
+      background: var(--bg-cream);
+      color: var(--ink);
       padding: var(--space-xxl) 0;
       text-align: center;
-    }
-    
-    .header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='rgba(255,255,255,0.05)' fill-rule='evenodd'/%3E%3C/svg%3E");
-      opacity: 0.2;
-      z-index: 0;
     }
     
     .header-content {
@@ -175,30 +153,55 @@
     }
     
     .tagline {
+      font-family: 'The Seasons', serif;
+      font-weight: 300;
       font-size: 1.25rem;
-      margin-bottom: var(--space-xl);
-      font-weight: 500;
-      opacity: 0.9;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: var(--space-md) auto var(--space-xl);
+      max-width: 700px;
+      color: var(--primary);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
     
-    /* Logo styling with The Seasons font */
-    .logo {
-      margin-bottom: var(--space-lg);
+    /* Logo styling */
+    .brand {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+      position: relative;
+    }
+    
+    .lotus-logo {
+      width: 80px;
+      height: auto;
+      margin-bottom: var(--space-md);
     }
     
     .logo-text {
       font-family: 'The Seasons', serif;
-      font-weight: bold;
-      font-size: 2.5rem;
-      letter-spacing: -0.03em;
-      background: linear-gradient(135deg, var(--white) 0%, rgba(255,255,255,0.85) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      display: inline-block;
+      font-weight: normal;
+      font-size: 3rem;
+      color: var(--primary);
+      display: block;
+      margin-bottom: var(--space-xs);
+    }
+    
+    .logo-tagline {
+      font-family: 'The Seasons', serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-top: var(--space-sm);
+    }
+    
+    .logo-divider {
+      width: 100%;
+      max-width: 300px;
+      height: 1px;
+      background-color: var(--primary);
+      margin: var(--space-md) auto;
+      opacity: 0.5;
     }
     
     /* Navigation */
@@ -206,7 +209,7 @@
       display: flex;
       gap: var(--space-md);
       justify-content: center;
-      margin-top: var(--space-lg);
+      margin-top: var(--space-xl);
       flex-wrap: wrap;
     }
     
@@ -216,40 +219,40 @@
       justify-content: center;
       border-radius: var(--radius-full);
       padding: var(--space-md) var(--space-xl);
-      font-weight: 600;
-      transition: all 0.2s ease;
+      font-weight: 500;
+      transition: all 0.3s ease;
       cursor: pointer;
       position: relative;
       overflow: hidden;
+      font-family: 'Inter', sans-serif;
     }
     
     .btn-primary {
-      background-color: var(--white);
-      color: var(--primary);
+      background-color: var(--primary);
+      color: var(--white);
       box-shadow: var(--shadow-md);
     }
     
     .btn-primary:hover {
       transform: translateY(-2px);
       box-shadow: var(--shadow-lg);
-      color: var(--primary-dark);
+      background-color: var(--primary-dark);
     }
     
-    .btn-ghost {
+    .btn-outline {
       background-color: transparent;
-      border: 2px solid rgba(255, 255, 255, 0.8);
-      color: var(--white);
+      border: 1px solid var(--primary);
+      color: var(--primary);
     }
     
-    .btn-ghost:hover {
-      background-color: rgba(255, 255, 255, 0.1);
+    .btn-outline:hover {
+      background-color: rgba(101, 169, 229, 0.1);
       transform: translateY(-2px);
-      color: var(--white);
     }
     
     /* Main content */
     .main {
-      padding: var(--space-xl) 0;
+      padding: var(--space-xl) 0 var(--space-xxl);
     }
     
     /* Section styling */
@@ -262,21 +265,12 @@
       position: relative;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(101, 169, 229, 0.1);
     }
     
     .section:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-lg);
-    }
-    
-    .section::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 6px;
-      background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
     }
     
     .section-title {
@@ -285,6 +279,7 @@
       margin-bottom: var(--space-xl);
       position: relative;
       z-index: 1;
+      color: var(--primary);
     }
     
     .section-title::after {
@@ -294,9 +289,9 @@
       left: 50%;
       transform: translateX(-50%);
       width: 60px;
-      height: 4px;
-      background: var(--primary-light);
-      border-radius: var(--radius-full);
+      height: 1px;
+      background: var(--primary);
+      opacity: 0.7;
     }
     
     /* Card grid */
@@ -316,13 +311,13 @@
     
     /* Feature cards */
     .card {
-      background-color: var(--gray-50);
+      background-color: var(--white);
       border-radius: var(--radius-lg);
       padding: var(--space-lg);
       height: 100%;
       box-shadow: var(--shadow-sm);
-      border: 1px solid var(--gray-200);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      border: 1px solid rgba(101, 169, 229, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
       overflow: hidden;
     }
@@ -330,41 +325,21 @@
     .card:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-md);
-      background-color: #f8faff;
-    }
-    
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, rgba(67, 97, 238, 0.03) 0%, rgba(115, 142, 252, 0.06) 100%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
-    .card:hover::before {
-      opacity: 1;
     }
     
     .card-icon {
       font-size: 2rem;
       margin-bottom: var(--space-md);
       display: block;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      color: var(--primary);
     }
     
     .card h3 {
       font-family: 'The Seasons', serif;
       margin-bottom: var(--space-md);
-      font-weight: bold;
       font-size: 1.25rem;
       position: relative;
+      color: var(--primary);
     }
     
     .card ul {
@@ -380,7 +355,6 @@
     .card li::before {
       content: '•';
       color: var(--primary);
-      font-weight: bold;
       display: inline-block;
       width: 1em;
       margin-left: -1em;
@@ -388,26 +362,14 @@
     
     /* Special sections */
     .pitch {
-      background: linear-gradient(to right, rgba(67, 97, 238, 0.08), rgba(67, 97, 238, 0.04));
-      border-left: 4px solid var(--primary);
+      background: rgba(101, 169, 229, 0.05);
+      border-left: 2px solid var(--primary);
       padding: var(--space-xl);
       margin: var(--space-xl) 0;
       border-radius: var(--radius-md);
       font-size: 1.25rem;
       font-style: italic;
-      color: var(--gray-800);
       position: relative;
-    }
-    
-    .pitch::before {
-      content: '"';
-      position: absolute;
-      top: 0;
-      left: var(--space-md);
-      font-size: 4rem;
-      color: rgba(67, 97, 238, 0.2);
-      font-family: Georgia, serif;
-      line-height: 1;
     }
     
     /* Condition links */
@@ -426,9 +388,9 @@
       border-radius: var(--radius-full);
       background: var(--white);
       color: var(--primary);
-      font-weight: 600;
+      font-weight: 500;
       box-shadow: var(--shadow-sm);
-      border: 1px solid var(--primary-light);
+      border: 1px solid rgba(101, 169, 229, 0.3);
       transition: all 0.2s ease;
     }
     
@@ -441,38 +403,26 @@
     
     /* Info panels */
     .note {
-      background-color: var(--gray-50);
-      border-left: 4px solid var(--primary);
+      background-color: rgba(101, 169, 229, 0.05);
+      border-left: 2px solid var(--primary);
       padding: var(--space-lg);
       border-radius: var(--radius-md);
       margin: var(--space-lg) 0;
     }
     
     .callout {
-      background: linear-gradient(to right, rgba(67, 97, 238, 0.08), rgba(255, 255, 255, 0.5));
+      background: rgba(101, 169, 229, 0.05);
       border-radius: var(--radius-lg);
       padding: var(--space-lg);
       margin: var(--space-lg) 0;
-      border-left: 5px solid var(--primary);
+      border-left: 2px solid var(--primary);
       position: relative;
       overflow: hidden;
     }
     
-    .callout::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='rgba(67, 97, 238, 0.05)' fill-rule='evenodd'/%3E%3C/svg%3E");
-      opacity: 0.5;
-      z-index: 0;
-    }
-    
     /* Privacy section */
     .privacy-section {
-      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(101, 169, 229, 0.05) 100%);
       border-radius: var(--radius-lg);
       padding: var(--space-xl);
       margin: var(--space-xl) 0;
@@ -490,37 +440,22 @@
     
     /* Community section */
     .community-section {
-      background: linear-gradient(135deg, rgba(6, 214, 160, 0.1) 0%, rgba(6, 214, 160, 0.05) 100%);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(101, 169, 229, 0.05) 100%);
       border-radius: var(--radius-lg);
       padding: var(--space-xl);
       margin: var(--space-xl) 0;
-      border-left: 5px solid var(--accent);
-      color: var(--gray-900);
+      border-left: 2px solid var(--primary);
     }
     
     /* Digital decorations */
-    .digital-dots {
+    .subtle-pattern {
       position: absolute;
-      width: 100px;
-      height: 100px;
-      background-image: radial-gradient(var(--primary-light) 1px, transparent 1px);
-      background-size: 10px 10px;
-      opacity: 0.2;
-      border-radius: var(--radius-full);
-    }
-    
-    .dots-1 {
-      top: -20px;
-      right: 10%;
-      width: 150px;
-      height: 150px;
-    }
-    
-    .dots-2 {
-      bottom: -30px;
-      left: 5%;
-      width: 120px;
-      height: 120px;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.02;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2365a9e5' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
     
     /* Final call to action */
@@ -528,11 +463,11 @@
       font-family: 'The Seasons', serif;
       text-align: center;
       font-size: 1.5rem;
-      font-weight: 700;
+      font-weight: normal;
       color: var(--primary);
       margin: var(--space-xxl) 0;
       padding: var(--space-lg);
-      background: linear-gradient(135deg, rgba(67, 97, 238, 0.08) 0%, rgba(67, 97, 238, 0.03) 100%);
+      background: rgba(101, 169, 229, 0.05);
       border-radius: var(--radius-lg);
     }
     
@@ -541,16 +476,15 @@
       background-color: var(--white);
       text-align: center;
       padding: var(--space-lg);
-      color: var(--gray-700);
+      color: var(--ink-light);
       margin-top: var(--space-xxl);
-      border-top: 1px solid var(--gray-200);
+      border-top: 1px solid rgba(101, 169, 229, 0.1);
     }
     
     .footer .timestamp {
       margin-top: var(--space-sm);
       font-size: 0.85rem;
-      color: var(--gray-700);
-      opacity: 0.8;
+      opacity: 0.7;
     }
     
     /* App showcase styles */
@@ -574,7 +508,7 @@
       border-radius: 36px;
       padding: 12px;
       background: #1a1a1a;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
     }
 
     .device-screen {
@@ -592,7 +526,7 @@
       left: 5%;
       width: 90%;
       height: 20px;
-      background: rgba(0, 0, 0, 0.15);
+      background: rgba(0, 0, 0, 0.1);
       filter: blur(15px);
       border-radius: 50%;
     }
@@ -626,19 +560,20 @@
       border-radius: 12px;
       font-size: 1.5rem;
       box-shadow: var(--shadow-sm);
-      border: 1px solid var(--gray-200);
+      border: 1px solid rgba(101, 169, 229, 0.2);
+      color: var(--primary);
     }
 
     .feature-content h3 {
       font-family: 'The Seasons', serif;
       margin: 0 0 var(--space-xs);
       font-size: 1.1rem;
+      color: var(--primary);
     }
 
     .feature-content p {
       margin: 0;
       font-size: 0.95rem;
-      color: var(--gray-700);
     }
     
     /* Testimonial styles */
@@ -660,13 +595,12 @@
       background: var(--white);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-md);
-      border: 1px solid var(--gray-200);
+      border: 1px solid rgba(101, 169, 229, 0.1);
     }
 
     .testimonial-content {
       font-style: italic;
       font-size: 1.1rem;
-      color: var(--gray-800);
       margin-bottom: var(--space-lg);
       position: relative;
     }
@@ -679,6 +613,7 @@
       font-size: 4rem;
       opacity: 0.1;
       font-family: Georgia, serif;
+      color: var(--primary);
     }
 
     .testimonial-author {
@@ -713,12 +648,12 @@
 
     .testimonial-info strong {
       font-weight: 600;
-      color: var(--gray-900);
+      color: var(--ink-dark);
     }
 
     .testimonial-info span {
       font-size: 0.9rem;
-      color: var(--gray-700);
+      color: var(--ink-light);
     }
 
     .testimonial-dots {
@@ -732,7 +667,7 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: var(--gray-300);
+      background: var(--gray-200);
       border: none;
       padding: 0;
       cursor: pointer;
@@ -778,7 +713,6 @@
     .placeholder-text {
       font-family: 'The Seasons', serif;
       font-size: 1.2rem;
-      font-weight: 600;
     }
 
     iframe {
@@ -835,6 +769,23 @@
       transition-delay: 0.4s;
     }
     
+    /* Lotus flower animation */
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    
+    .animated-lotus {
+      animation: float 4s ease-in-out infinite;
+    }
+    
     /* Animations */
     @keyframes fadeUp {
       from {
@@ -851,6 +802,33 @@
       animation: fadeUp 0.6s ease forwards;
     }
     
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+    
+    @keyframes drawLine {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+    
+    .animate-line {
+      width: 0;
+      animation: drawLine 1.5s ease forwards 0.5s;
+    }
+    
     /* Responsive */
     @media (max-width: 1024px) {
       .grid-3 {
@@ -865,6 +843,10 @@
       
       h2 {
         font-size: 1.75rem;
+      }
+      
+      .logo-text {
+        font-size: 2.5rem;
       }
       
       .grid-3, .grid-2 {
@@ -889,8 +871,12 @@
         padding: var(--space-xl) 0;
       }
       
+      .logo-text {
+        font-size: 2rem;
+      }
+      
       .tagline {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
       
       .btn {
@@ -937,23 +923,41 @@
 <body>
   <header class="header">
     <div class="container header-content">
-      <div class="logo">
-        <!-- Replace with actual logo when available -->
-        <span class="logo-text">CalmTrack</span>
+      <div class="brand">
+        <!-- Lotus flower SVG logo -->
+        <svg class="lotus-logo animated-lotus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#65a9e5" stroke-width="1.5">
+          <path d="M40 5C40 15 35 30 25 38C35 30 45 30 40 5Z" />
+          <path d="M40 5C40 15 45 30 55 38C45 30 35 30 40 5Z" />
+          <path d="M40 5C30 15 20 15 12 10C25 20 35 25 40 5Z" />
+          <path d="M40 5C50 15 60 15 68 10C55 20 45 25 40 5Z" />
+          <path d="M25 38C15 45 10 55 10 65C20 55 30 45 25 38Z" />
+          <path d="M55 38C65 45 70 55 70 65C60 55 50 45 55 38Z" />
+          <path d="M40 65C30 55 20 50 12 48C25 53 35 57 40 65Z" />
+          <path d="M40 65C50 55 60 50 68 48C55 53 45 57 40 65Z" />
+          <path d="M40 65C40 55 35 45 25 38C35 45 45 45 40 65Z" />
+          <path d="M40 65C40 55 45 45 55 38C45 45 35 45 40 65Z" />
+        </svg>
+        
+        <!-- Main logo text -->
+        <span class="logo-text fade-in">CalmTrack</span>
+        
+        <!-- Divider line -->
+        <div class="logo-divider animate-line"></div>
+        
+        <!-- Tagline -->
+        <div class="logo-tagline fade-in">A Digital Diary & Insight Tool for Neurodiverse Conditions</div>
       </div>
-      <h1>Welcome to CalmTrack</h1>
-      <p class="tagline">A Digital Diary & Insight Tool for Neurodiverse Conditions</p>
+
       <nav class="nav" aria-label="primary">
         <a class="btn btn-primary" href="#features">See Features</a>
-        <a class="btn btn-ghost" href="#conditions">Conditions</a>
-        <a class="btn btn-ghost" href="#privacy">Privacy</a>
+        <a class="btn btn-outline" href="#conditions">Conditions</a>
+        <a class="btn btn-outline" href="#privacy">Privacy</a>
         <!-- When app store links are ready, replace # with store URLs -->
         <!-- <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=...">Get Android</a> -->
         <!-- <a class="btn btn-primary" href="https://apps.apple.com/app/...">Get iOS</a> -->
       </nav>
     </div>
-    <div class="digital-dots dots-1"></div>
-    <div class="digital-dots dots-2"></div>
+    <div class="subtle-pattern"></div>
   </header>
 
   <main class="main">
@@ -1203,17 +1207,6 @@
             </div>
             <div class="placeholder-text">Demo video coming soon</div>
           </div>
-          
-          <!-- Uncomment and update this when you have the actual video -->
-          <!-- 
-          <iframe width="560" height="315" 
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-            title="CalmTrack Demo Video" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
-          -->
         </div>
       </section>
 
@@ -1243,7 +1236,7 @@
           <a href="mailto:info@calmtrack.net">info@calmtrack.net</a> |
           <a href="mailto:support@calmtrack.net">support@calmtrack.net</a>
         </p>
-        <p class="text-center mt-lg" style="color:var(--gray-700);font-size:0.9rem">
+        <p class="text-center mt-lg" style="color:var(--ink-light);font-size:0.9rem">
           We're adding plain-language explainers & caregiver tips for each condition — coming soon.
         </p>
       </section>
@@ -1253,7 +1246,7 @@
   <footer class="footer">
     <div class="container">
       <p>&copy; 2025 CalmTrack | Built for Families, Backed by Science</p>
-      <p class="timestamp">Last Updated: 2025-09-01 09:48:09</p>
+      <p class="timestamp">Last Updated: 2025-09-01 10:01:13</p>
     </div>
   </footer>
 
