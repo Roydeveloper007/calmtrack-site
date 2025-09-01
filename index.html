@@ -3,145 +3,805 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="CalmTrack empowers neurodiverse families and caregivers with intuitive behavioral tracking, insights, and privacy-first design." />
   <title>CalmTrack – Empowering Neurodiverse Care</title>
 
   <!-- SEO -->
   <meta name="description" content="CalmTrack helps neurodiverse families and caregivers track behaviors and feelings, spot patterns, and share insights—privacy-first." />
   <link rel="canonical" href="https://www.calmtrack.net/" />
   <meta property="og:title" content="CalmTrack – Empowering Neurodiverse Care" />
-  <meta property="og:description" content="A private digital diary and insight tool for neurodiverse conditions. Track, analyze, and share with confidence." />
+  <meta property="og:description" content="A digital diary and insight tool for neurodiverse conditions. Track, analyze, and report with privacy and science at the core." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.calmtrack.net/" />
-  <meta name="theme-color" content="#3b82f6" />
+  <meta name="theme-color" content="#4361ee" />
 
   <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --brand:#3b82f6; --brand-2:#60a5fa; --ink:#1f2937; --bg:#f9fafb;
-      --card:#ffffff; --muted:#64748b; --accent:#22c55e;
+    :root {
+      /* Modern color palette */
+      --primary: #4361ee;
+      --primary-light: #738efc;
+      --primary-dark: #3a56d4;
+      --accent: #06d6a0;
+      --accent-light: #4ae3b5;
+      --warning: #f72585;
+      --dark: #0f172a;
+      --gray-900: #1e293b;
+      --gray-800: #334155;
+      --gray-700: #475569;
+      --gray-200: #e2e8f0;
+      --gray-100: #f1f5f9;
+      --gray-50: #f8fafc;
+      --white: #ffffff;
+      
+      /* Spacing system */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+      --space-xxl: 3rem;
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.1);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -1px rgba(15, 23, 42, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
+      
+      /* Border radius */
+      --radius-sm: 0.25rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-full: 9999px;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:18px;line-height:1.6}
-    a{color:#2563eb;text-decoration:none}
-    a:hover,a:focus{text-decoration:underline}
-    header{
-      background:linear-gradient(90deg,var(--brand) 70%,var(--brand-2) 100%);
-      color:#fff; padding:2.75rem 1rem 2.25rem; text-align:center;
-      box-shadow:0 2px 8px rgba(59,130,246,.15)
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .nav{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:.75rem}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.7rem 1.2rem;font-weight:700;border:2px solid transparent;transition:.15s}
-    .btn.primary{background:#fff;color:var(--brand)}
-    .btn.primary:hover{transform:translateY(-1px)}
-    .btn.ghost{border-color:#fff;color:#fff;background:transparent}
-    .btn.ghost:hover{background:rgba(255,255,255,.15)}
-    main{max-width:1000px;margin:2rem auto;padding:0 1rem}
-    .section{background:var(--card);padding:1.5rem 1.25rem;margin:1rem 0;border-radius:14px;box-shadow:0 0 16px rgba(0,0,0,.06)}
-    .h2{font-size:1.55rem;font-weight:800;letter-spacing:-.4px;color:#2563eb;text-align:center;margin:0 0 1rem}
-    .lead{font-size:1.1rem;color:#0f172a;text-align:center;margin:0 auto 1.25rem;max-width:75ch}
-    .grid{display:grid;gap:1rem}
-    @media(min-width:720px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
-    .card{background:#eef4ff;border-radius:12px;padding:1rem 1.1rem;box-shadow:0 2px 10px #93c5fd55}
-    .card h3{margin:.1rem 0 .5rem}
-    .pill{display:inline-flex;align-items:center;gap:.4rem;background:#eff6ff;color:#1e40af;font-weight:700;border-radius:999px;padding:.55rem .95rem;border:1px solid #dbeafe}
-    .cond-wrap{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center}
-    .cond{display:inline-flex;align-items:center;padding:.55rem .9rem;border-radius:999px;background:var(--brand);color:#fff;font-weight:700;box-shadow:0 2px 7px #3b82f655}
-    .cond:hover{background:#1d4ed8;transform:translateY(-1px)}
-    .note{background:#f1f5f9;border-left:4px solid var(--brand);padding:1rem;border-radius:8px;color:#0f172a}
-    .callout{background:#e0e7ff;border-left:7px solid #6366f1;padding:1.1rem;border-radius:12px;color:#3730a3}
-    footer{text-align:center;font-size:.95rem;padding:1.2rem;background:#e5e7eb;color:#374151;border-radius:12px;margin:1rem auto;max-width:1000px}
-    /* accessibility helpers */
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--gray-50);
+      color: var(--gray-900);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: var(--space-md);
+      letter-spacing: -0.025em;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+    
+    h3 {
+      font-size: 1.25rem;
+      color: var(--gray-900);
+    }
+    
+    p {
+      margin-bottom: var(--space-lg);
+    }
+    
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    
+    a:hover {
+      color: var(--primary-light);
+    }
+    
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-lg);
+    }
+    
+    /* Header */
+    .header {
+      position: relative;
+      background: radial-gradient(circle at 10% 20%, var(--primary) 0%, var(--primary-dark) 90%);
+      color: var(--white);
+      overflow: hidden;
+      padding: var(--space-xxl) 0;
+      text-align: center;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='rgba(255,255,255,0.05)' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.2;
+      z-index: 0;
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .tagline {
+      font-size: 1.25rem;
+      margin-bottom: var(--space-xl);
+      font-weight: 500;
+      opacity: 0.9;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Navigation */
+    .nav {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      margin-top: var(--space-lg);
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-full);
+      padding: var(--space-md) var(--space-xl);
+      font-weight: 600;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    
+    .btn-primary {
+      background-color: var(--white);
+      color: var(--primary);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+      color: var(--primary-dark);
+    }
+    
+    .btn-ghost {
+      background-color: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      color: var(--white);
+    }
+    
+    .btn-ghost:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      color: var(--white);
+    }
+    
+    /* Main content */
+    .main {
+      padding: var(--space-xl) 0;
+    }
+    
+    /* Section styling */
+    .section {
+      background-color: var(--white);
+      border-radius: var(--radius-xl);
+      padding: var(--space-xl);
+      margin-bottom: var(--space-xl);
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .section:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--primary-light);
+      border-radius: var(--radius-full);
+    }
+    
+    /* Card grid */
+    .grid {
+      display: grid;
+      gap: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Feature cards */
+    .card {
+      background-color: var(--gray-50);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      height: 100%;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(67, 97, 238, 0.03) 0%, rgba(115, 142, 252, 0.06) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .card:hover::before {
+      opacity: 1;
+    }
+    
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: var(--space-md);
+      display: block;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .card h3 {
+      margin-bottom: var(--space-md);
+      font-weight: 700;
+      font-size: 1.25rem;
+      position: relative;
+    }
+    
+    .card ul {
+      list-style: none;
+      margin-left: var(--space-md);
+    }
+    
+    .card li {
+      margin-bottom: var(--space-sm);
+      position: relative;
+    }
+    
+    .card li::before {
+      content: '•';
+      color: var(--primary);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    
+    /* Special sections */
+    .pitch {
+      background: linear-gradient(to right, rgba(67, 97, 238, 0.08), rgba(67, 97, 238, 0.04));
+      border-left: 4px solid var(--primary);
+      padding: var(--space-xl);
+      margin: var(--space-xl) 0;
+      border-radius: var(--radius-md);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--gray-800);
+      position: relative;
+    }
+    
+    .pitch::before {
+      content: '"';
+      position: absolute;
+      top: 0;
+      left: var(--space-md);
+      font-size: 4rem;
+      color: rgba(67, 97, 238, 0.2);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    
+    /* Condition links */
+    .cond-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      justify-content: center;
+      margin: var(--space-xl) 0;
+    }
+    
+    .cond {
+      display: inline-flex;
+      align-items: center;
+      padding: var(--space-md) var(--space-lg);
+      border-radius: var(--radius-full);
+      background: var(--white);
+      color: var(--primary);
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--primary-light);
+      transition: all 0.2s ease;
+    }
+    
+    .cond:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    /* Info panels */
+    .note {
+      background-color: var(--gray-50);
+      border-left: 4px solid var(--primary);
+      padding: var(--space-lg);
+      border-radius: var(--radius-md);
+      margin: var(--space-lg) 0;
+    }
+    
+    .callout {
+      background: linear-gradient(to right, rgba(67, 97, 238, 0.08), rgba(255, 255, 255, 0.5));
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      margin: var(--space-lg) 0;
+      border-left: 5px solid var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .callout::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='rgba(67, 97, 238, 0.05)' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.5;
+      z-index: 0;
+    }
+    
+    /* Privacy section */
+    .privacy-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-xl) 0;
+      position: relative;
+    }
+    
+    .privacy-section::before {
+      content: '🔒';
+      position: absolute;
+      top: var(--space-lg);
+      right: var(--space-lg);
+      font-size: 2rem;
+      opacity: 0.2;
+    }
+    
+    /* Community section */
+    .community-section {
+      background: linear-gradient(135deg, rgba(6, 214, 160, 0.1) 0%, rgba(6, 214, 160, 0.05) 100%);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-xl) 0;
+      border-left: 5px solid var(--accent);
+      color: var(--gray-900);
+    }
+    
+    /* Digital decorations */
+    .digital-dots {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-image: radial-gradient(var(--primary-light) 1px, transparent 1px);
+      background-size: 10px 10px;
+      opacity: 0.2;
+      border-radius: var(--radius-full);
+    }
+    
+    .dots-1 {
+      top: -20px;
+      right: 10%;
+      width: 150px;
+      height: 150px;
+    }
+    
+    .dots-2 {
+      bottom: -30px;
+      left: 5%;
+      width: 120px;
+      height: 120px;
+    }
+    
+    /* Final call to action */
+    .final-thought {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: var(--space-xxl) 0;
+      padding: var(--space-lg);
+      background: linear-gradient(135deg, rgba(67, 97, 238, 0.08) 0%, rgba(67, 97, 238, 0.03) 100%);
+      border-radius: var(--radius-lg);
+    }
+    
+    /* Footer */
+    .footer {
+      background-color: var(--white);
+      text-align: center;
+      padding: var(--space-lg);
+      color: var(--gray-700);
+      margin-top: var(--space-xxl);
+      border-top: 1px solid var(--gray-200);
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      h2 {
+        font-size: 1.75rem;
+      }
+      
+      .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      
+      .section {
+        padding: var(--space-lg);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .header {
+        padding: var(--space-xl) 0;
+      }
+      
+      .tagline {
+        font-size: 1.1rem;
+      }
+      
+      .btn {
+        padding: var(--space-sm) var(--space-lg);
+        font-size: 0.9rem;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      .pitch {
+        font-size: 1.1rem;
+        padding: var(--space-lg);
+      }
+    }
+    
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-up {
+      animation: fadeUp 0.6s ease forwards;
+    }
+    
+    /* Utility classes */
+    .text-center {
+      text-align: center;
+    }
+    
+    .mt-lg {
+      margin-top: var(--space-lg);
+    }
+    
+    .mb-lg {
+      margin-bottom: var(--space-lg);
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1 style="margin:.25rem 0 0;font-weight:900;letter-spacing:-1px">Welcome to CalmTrack</h1>
-    <p style="margin:.4rem 0 1rem;font-size:1.15rem">A Digital Diary & Insight Tool for Neurodiverse Conditions</p>
-    <nav class="nav" aria-label="primary">
-      <a class="btn primary" href="#features">See Features</a>
-      <a class="btn ghost" href="#conditions">Conditions</a>
-      <a class="btn ghost" href="#privacy">Privacy</a>
-      <!-- When app store links are ready, replace # with store URLs -->
-      <!-- <a class="btn primary" href="https://play.google.com/store/apps/details?id=...">Get Android</a> -->
-      <!-- <a class="btn primary" href="https://apps.apple.com/app/...">Get iOS</a> -->
-    </nav>
+  <header class="header">
+    <div class="container header-content">
+      <h1>Welcome to CalmTrack</h1>
+      <p class="tagline">A Digital Diary & Insight Tool for Neurodiverse Conditions</p>
+      <nav class="nav" aria-label="primary">
+        <a class="btn btn-primary" href="#features">See Features</a>
+        <a class="btn btn-ghost" href="#conditions">Conditions</a>
+        <a class="btn btn-ghost" href="#privacy">Privacy</a>
+        <!-- When app store links are ready, replace # with store URLs -->
+        <!-- <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=...">Get Android</a> -->
+        <!-- <a class="btn btn-primary" href="https://apps.apple.com/app/...">Get iOS</a> -->
+      </nav>
+    </div>
+    <div class="digital-dots dots-1"></div>
+    <div class="digital-dots dots-2"></div>
   </header>
 
-  <main>
-    <section class="section" id="vision">
-      <h2 class="h2">Vision</h2>
-      <p class="lead">Empower families, caregivers, and individuals with simple yet powerful tracking, so patterns and triggers become visible—and progress becomes easier.</p>
-    </section>
+  <main class="main">
+    <div class="container">
+      <section class="section fade-up" id="vision">
+        <h2 class="section-title">Vision</h2>
+        <p class="text-center">
+          To empower individuals and caregivers with a simple yet powerful tool to track emotional and behavioral health, identify triggers, and facilitate well-informed care and decisions.
+        </p>
+      </section>
+      
+      <section class="section fade-up" id="mission">
+        <h2 class="section-title">Mission</h2>
+        <p style="text-align:center;">
+          We aim to streamline behavioral and emotional tracking through intuitive, customizable logging and analysis tools, enabling parents, caregivers, and healthcare professionals to provide personalized care to neurodiverse individuals.
+        </p>
+      </section>
 
-    <section class="section" id="mission">
-      <h2 class="h2">Mission</h2>
-      <p style="text-align:justify;margin:0">
-        CalmTrack streamlines behavior & emotion logging with customizable inputs, trend visuals, and shareable summaries—so parents, educators, and clinicians can coordinate care.
-      </p>
-    </section>
+      <section class="section fade-up" id="features">
+        <h2 class="section-title">Key Features</h2>
+        <div class="grid grid-3">
+          <div class="card">
+            <span class="card-icon">📝</span>
+            <h3>Track with Ease</h3>
+            <ul>
+              <li>Log daily emotional states, incidents, and calming strategies</li>
+              <li>Score emotions (anxiety, frustration, happiness, etc)</li>
+              <li>Input from parents, individuals, or caregivers</li>
+              <li>Quick entry for busy days</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <span class="card-icon">📈</span>
+            <h3>Visualize Trends</h3>
+            <ul>
+              <li>Spot behavioral patterns across days, weeks, and months</li>
+              <li>Interactive graphs for insights</li>
+              <li>Visualize improvements, regressions, or triggers</li>
+              <li>Understand what works and what doesn't</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <span class="card-icon">📊</span>
+            <h3>Export & Share</h3>
+            <ul>
+              <li>Generate secure PDF summaries for therapists or teachers</li>
+              <li>Export for medical, educational, or personal reflection</li>
+              <li>Email summaries securely</li>
+              <li>Control what information gets shared</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="note mt-lg">
+          <strong>Local-first mindset:</strong> Your data stays on your device unless you explicitly choose to export or share.
+        </div>
+        
+        <div class="pitch">
+          CalmTrack isn't just a tracker. It's a calm intelligence tool — helping neurodivergent individuals and families see the unseen.<br><br>
+          By offering real-world behavioral insights, CalmTrack can become the default app for neuro-behavioral reflection and growth. It's a mirror for the nervous system, day by day — something millions are quietly craving.
+        </div>
+      </section>
 
-    <section class="section" id="features">
-      <h2 class="h2">Key Features</h2>
-      <div class="grid cols-3">
-        <div class="card">
-          <h3>📝 Track with Ease</h3>
+      <section class="section fade-up" id="conditions">
+        <h2 class="section-title">Built for Neurodiversity</h2>
+        <p class="text-center mb-lg">
+          CalmTrack is designed for Autism, ADHD, Sensory Processing Disorder, and other neurodevelopmental differences.
+          <strong>Learn more about these conditions from trusted resources:</strong>
+        </p>
+        
+        <div class="cond-wrap">
+          <a href="https://www.autism.org.uk/what-is-autism" class="cond" target="_blank" rel="noopener noreferrer">Autism</a>
+          <a href="https://www.cdc.gov/ncbddd/adhd/facts.html" class="cond" target="_blank" rel="noopener noreferrer">ADHD</a>
+          <a href="https://www.spdstar.org/basic/understanding-sensory-processing-disorder" class="cond" target="_blank" rel="noopener noreferrer">Sensory Processing</a>
+          <a href="https://www.tourettes-action.org.uk/about-tourettes.html" class="cond" target="_blank" rel="noopener noreferrer">Tourette Syndrome</a>
+          <a href="https://www.nimh.nih.gov/health/topics/anxiety-disorders" class="cond" target="_blank" rel="noopener noreferrer">Anxiety</a>
+          <a href="https://www.nhs.uk/mental-health/conditions/" class="cond" target="_blank" rel="noopener noreferrer">Other Conditions</a>
+          <a href="https://www.nhs.uk/conditions/aspergers-syndrome/" class="cond" target="_blank" rel="noopener noreferrer">Asperger Profile</a>
+          <a href="https://www.nidcd.nih.gov/health/central-auditory-processing-disorder" class="cond" target="_blank" rel="noopener noreferrer">Auditory Processing</a>
+        </div>
+        
+        <div class="grid grid-2 mt-lg">
+          <div class="card">
+            <h3>Impact & Prevalence</h3>
+            <ul>
+              <li><strong>Autism Spectrum Disorder (ASD)</strong> – affecting ~1 in 36 children</li>
+              <li><strong>ADHD</strong> – impacts approximately 8.7% of children and 4.4% of adults globally</li>
+              <li><strong>Sensory Processing Disorder (SPD)</strong> – commonly co-occurs with autism</li>
+              <li><strong>Tourette Syndrome</strong> – affects 1 in 162 children in the U.S.</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>Care Needs</h3>
+            <ul>
+              <li><strong>Ongoing monitoring</strong> to identify what helps and hinders</li>
+              <li><strong>Data for specialists</strong> to make informed care decisions</li>
+              <li><strong>Communication tools</strong> for school accommodations</li>
+              <li><strong>Emotional regulation</strong> tracking for personal growth</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section fade-up privacy-section" id="privacy">
+        <h2 class="section-title">Data Privacy & Protection</h2>
+        <div class="callout">
+          <h3>Your Data, Your Peace of Mind</h3>
           <ul>
-            <li>Log moods, incidents, strategies</li>
-            <li>Score emotions (anxiety, frustration, joy)</li>
-            <li>Built for families & caregivers</li>
+            <li><strong>Data is always encrypted and protected on your device</strong> — your family's information stays safe and private, always.</li>
+            <li><strong>Automatic protection</strong> — CalmTrack quietly safeguards your information while you focus on what matters.</li>
+            <li><strong>You stay in control</strong> — data is never shared, sold, or sent to anyone unless you choose to do so.</li>
+            <li><strong>Peace of mind by design</strong> — every feature and update is built with your trust and privacy at the center.</li>
           </ul>
         </div>
-        <div class="card">
-          <h3>📈 Visualize Trends</h3>
+        
+        <div class="mt-lg">
+          <h3>Our Privacy Commitment</h3>
           <ul>
-            <li>Spot patterns across days / weeks</li>
-            <li>Understand triggers and supports</li>
-            <li>Plain, actionable insights</li>
+            <li><strong>Local-First Storage:</strong> Your data is stored securely on your own device by default.</li>
+            <li><strong>Encryption at Rest:</strong> When CalmTrack stores information, it is encrypted on your device.</li>
+            <li><strong>No Automatic Data Sharing:</strong> CalmTrack does <u>not</u> share your personal data with any third party.</li>
+            <li><strong>Explicit User Actions:</strong> Only when you choose to generate a report is your data processed for that specific action.</li>
+            <li><strong>No Tracking or Analytics:</strong> We do not use cookies, trackers, or analytics that collect personal information.</li>
+            <li><strong>Transparent Controls:</strong> You can delete your data at any time from within the app.</li>
           </ul>
+          <p class="mt-lg text-center"><em>We designed CalmTrack to put you in control. Our privacy approach is simple: your data, your device, your rules.</em></p>
         </div>
-        <div class="card">
-          <h3>📅 Export & Share</h3>
-          <ul>
-            <li>PDF summaries for school or clinic</li>
-            <li>Share on your terms</li>
-            <li>No ads. No tracking.</li>
-          </ul>
-        </div>
+      </section>
+
+      <section class="section fade-up community-section" id="community">
+        <h2 class="section-title">Community Services</h2>
+        <p>
+          CalmTrack strengthens communities by supporting those who need extra help—empowering families, caregivers, and educators to work together for positive change. The app's community services connect users to local support groups, facilitate communication with schools and professionals, and make it easier to find resources tailored for neurodiverse needs.
+        </p>
+        <p>
+          CalmTrack helps society by creating a network of understanding: it encourages shared learning, makes tracking and sharing progress simple, and helps celebrate every milestone—no matter how small. By bridging gaps between individuals and the wider community, CalmTrack ensures that everyone, especially those needing additional support, can participate fully and feel truly valued.
+        </p>
+      </section>
+
+      <div class="final-thought">
+        <span>🧩 CalmTrack is not just a tracker.</span><br>
+        <span>It's a calm intelligence tool — helping neurodivergent individuals and families see the unseen.</span>
       </div>
-      <p class="note" style="margin:.8rem 0 0">Local-first mindset: your data stays on your device unless you explicitly choose to export or share.</p>
-    </section>
 
-    <section class="section" id="conditions">
-      <h2 class="h2">Built for Neurodiversity</h2>
-      <p class="lead" style="margin-bottom:.8rem">Learn more from trusted sources:</p>
-      <div class="cond-wrap" aria-label="Condition quick links">
-        <!-- Original 6 + 8 more -->
-        <a class="cond" href="https://www.autism.org.uk/what-is-autism" target="_blank" rel="noopener">Autism</a>
-        <a class="cond" href="https://www.cdc.gov/ncbddd/adhd/facts.html" target="_blank" rel="noopener">ADHD</a>
-        <a class="cond" href="https://www.spdstar.org/basic/understanding-sensory-processing-disorder" target="_blank" rel="noopener">Sensory Processing Disorder</a>
-        <a class="cond" href="https://www.tourettes-action.org.uk/about-tourettes.html" target="_blank" rel="noopener">Tourette Syndrome</a>
-        <a class="cond" href="https://www.nimh.nih.gov/health/topics/anxiety-disorders" target="_blank" rel="noopener">Anxiety</a>
-        <a class="cond" href="https://www.nhs.uk/mental-health/conditions/" target="_blank" rel="noopener">Other</a>
+      <section class="section fade-up" id="status">
+        <h2 class="section-title">Project Status</h2>
+        <p class="text-center">
+          The CalmTrack platform is ready. We are rolling out access to verified users.<br>
+          Thank you for your interest and support.
+        </p>
+        <p class="text-center mt-lg">
+          <strong>Contact us:</strong>
+          <a href="mailto:info@calmtrack.net">info@calmtrack.net</a> |
+          <a href="mailto:support@calmtrack.net">support@calmtrack.net</a>
+        </p>
+        <p class="text-center mt-lg" style="color:var(--gray-700);font-size:0.9rem">
+          We're adding plain-language explainers & caregiver tips for each condition — coming soon.
+        </p>
+      </section>
+    </div>
+  </main>
 
-        <!-- New additions -->
-        <a class="cond" href="https://www.nhs.uk/conditions/aspergers-syndrome/" target="_blank" rel="noopener">Asperger Profile</a>
-        <a class="cond" href="https://www.nidcd.nih.gov/health/central-auditory-processing-disorder" target="_blank" rel="noopener">Auditory Processing</a>
-        <a class="cond" href="https://www.readandspell.com/dyslexia" target="_blank" rel="noopener">Dyslexia</a>
-        <a class="cond" href="https://www.additudemag.com/slideshows/what-is-dyspraxia-symptoms-treatment/" target="_blank" rel="noopener">Dyspraxia</a>
-        <a class="cond" href="https://www.dyscalculia.org/" target="_blank" rel="noopener">Dyscalculia</a>
-        <a class="cond" href="https://www.cdc.gov/childrensmentalhealth/ocd.html" target="_blank" rel="noopener">OCD</a>
-        <a class="cond" href="https://www.nimh.nih.gov/health/topics/depression" target="_blank" rel="noopener">Depression</a>
-        <a class="cond" href="https://www.nhs.uk/conditions/pathological-demand-avoidance-pda/" target="_blank" rel="noopener">PDA Profile</a>
-      </div>
-      <p style="margin-top:.6rem;text-align:center;color:var(--muted);font-size:.98rem">
-        We’re adding plain-language explainers & caregiver tips for each condition — coming soon.
-      </p>
-    </section>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 CalmTrack | Built for Families, Backed by Science</p>
+    </div>
+  </footer>
 
-    <section class="section" id="reassurance">
-      <h2 class="h2">Your Data, Your Peace of Mind</h2>
-      <div class="callout">
-        <ul style="margin:.4rem 0 0 1.2rem;list-style:disc inside">
-          <li
+  <script>
+    // Add intersection observer for fade-in animations
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-up');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('fade-up');
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
+</html>
