@@ -170,10 +170,12 @@
       position: relative;
     }
     
-    .lotus-logo {
-      width: 80px;
+    .brand-logo {
+      width: 300px;
+      max-width: 100%;
       height: auto;
-      margin-bottom: var(--space-md);
+      margin: 0 auto var(--space-md);
+      animation: float 4s ease-in-out infinite;
     }
     
     .logo-text {
@@ -769,7 +771,7 @@
       transition-delay: 0.4s;
     }
     
-    /* Lotus flower animation */
+    /* Logo animation */
     @keyframes float {
       0% {
         transform: translateY(0px);
@@ -780,10 +782,6 @@
       100% {
         transform: translateY(0px);
       }
-    }
-    
-    .animated-lotus {
-      animation: float 4s ease-in-out infinite;
     }
     
     /* Animations */
@@ -924,28 +922,11 @@
   <header class="header">
     <div class="container header-content">
       <div class="brand">
-        <!-- Lotus flower SVG logo -->
-        <svg class="lotus-logo animated-lotus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#65a9e5" stroke-width="1.5">
-          <path d="M40 5C40 15 35 30 25 38C35 30 45 30 40 5Z" />
-          <path d="M40 5C40 15 45 30 55 38C45 30 35 30 40 5Z" />
-          <path d="M40 5C30 15 20 15 12 10C25 20 35 25 40 5Z" />
-          <path d="M40 5C50 15 60 15 68 10C55 20 45 25 40 5Z" />
-          <path d="M25 38C15 45 10 55 10 65C20 55 30 45 25 38Z" />
-          <path d="M55 38C65 45 70 55 70 65C60 55 50 45 55 38Z" />
-          <path d="M40 65C30 55 20 50 12 48C25 53 35 57 40 65Z" />
-          <path d="M40 65C50 55 60 50 68 48C55 53 45 57 40 65Z" />
-          <path d="M40 65C40 55 35 45 25 38C35 45 45 45 40 65Z" />
-          <path d="M40 65C40 55 45 45 55 38C45 45 35 45 40 65Z" />
-        </svg>
-        
-        <!-- Main logo text -->
-        <span class="logo-text fade-in">CalmTrack</span>
+        <!-- Logo from Google Cloud Storage -->
+        <img src="https://storage.googleapis.com/quantum-boulder-468219-v8-brand-assets/logos/logo.jpg" alt="CalmTrack Logo" class="brand-logo fade-in">
         
         <!-- Divider line -->
         <div class="logo-divider animate-line"></div>
-        
-        <!-- Tagline -->
-        <div class="logo-tagline fade-in">A Digital Diary & Insight Tool for Neurodiverse Conditions</div>
       </div>
 
       <nav class="nav" aria-label="primary">
@@ -1246,7 +1227,7 @@
   <footer class="footer">
     <div class="container">
       <p>&copy; 2025 CalmTrack | Built for Families, Backed by Science</p>
-      <p class="timestamp">Last Updated: 2025-09-01 10:01:13</p>
+      <p class="timestamp">Last Updated: 2025-09-03 09:14:26</p>
     </div>
   </footer>
 
