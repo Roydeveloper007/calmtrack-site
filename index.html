@@ -829,6 +829,311 @@
       animation: drawLine 1.5s ease forwards 0.5s;
     }
     
+    /* Analytics Admin Panel Styles */
+    .admin-panel {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      padding: var(--space-md);
+      z-index: 1000;
+      max-width: 320px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      border: 1px solid var(--primary-light);
+      text-align: left;
+    }
+    
+    .admin-panel.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .admin-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--space-sm);
+    }
+    
+    .admin-panel-title {
+      font-family: 'The Seasons', serif;
+      margin: 0;
+      font-size: 1rem;
+      color: var(--primary);
+    }
+    
+    .admin-panel-close {
+      background: none;
+      border: none;
+      color: var(--ink-light);
+      cursor: pointer;
+      font-size: 1.2rem;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      transition: background-color 0.2s ease;
+    }
+    
+    .admin-panel-close:hover {
+      background-color: var(--gray-100);
+      color: var(--ink-dark);
+    }
+    
+    .admin-stats {
+      margin-bottom: var(--space-md);
+    }
+    
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: var(--space-xs);
+      font-size: 0.9rem;
+    }
+    
+    .stat-label {
+      color: var(--ink-dark);
+      font-weight: 500;
+    }
+    
+    .stat-value {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    .admin-actions {
+      display: flex;
+      gap: var(--space-sm);
+    }
+    
+    .admin-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.8rem;
+      flex: 1;
+      transition: background-color 0.2s ease;
+    }
+    
+    .admin-btn:hover {
+      background-color: var(--primary-dark);
+    }
+    
+    .map-preview {
+      width: 100%;
+      height: 150px;
+      background-color: var(--gray-100);
+      border-radius: var(--radius-sm);
+      margin-top: var(--space-sm);
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .map-preview iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* Cookie consent banner */
+    .cookie-consent {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--white);
+      padding: var(--space-md) var(--space-lg);
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .cookie-consent.visible {
+      transform: translateY(0);
+    }
+    
+    .cookie-text {
+      margin: 0;
+      flex: 1;
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+    
+    .cookie-actions {
+      display: flex;
+      gap: var(--space-sm);
+    }
+    
+    .cookie-btn {
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--radius-sm);
+      border: none;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .cookie-btn-accept {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    .cookie-btn-accept:hover {
+      background-color: var(--primary-dark);
+    }
+    
+    .cookie-btn-decline {
+      background-color: var(--gray-100);
+      color: var(--ink-dark);
+    }
+    
+    .cookie-btn-decline:hover {
+      background-color: var(--gray-200);
+    }
+    
+    /* Toggle Admin Panel Button */
+    .toggle-admin {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      z-index: 999;
+      transition: all 0.2s ease;
+    }
+    
+    .toggle-admin:hover {
+      transform: scale(1.1);
+      background-color: var(--primary-dark);
+    }
+    
+    /* Admin login modal */
+    .login-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    
+    .login-modal.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    .login-form {
+      background-color: var(--white);
+      padding: var(--space-xl);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      width: 90%;
+      max-width: 400px;
+    }
+    
+    .login-title {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+      font-family: 'The Seasons', serif;
+      color: var(--primary);
+    }
+    
+    .form-group {
+      margin-bottom: var(--space-md);
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: var(--space-xs);
+      font-weight: 500;
+      color: var(--ink-dark);
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: var(--space-md);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      transition: border-color 0.2s ease;
+    }
+    
+    .form-input:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+    
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: var(--space-lg);
+    }
+    
+    .login-btn {
+      background-color: var(--primary);
+      color: var(--white);
+      border: none;
+      padding: var(--space-sm) var(--space-xl);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.2s ease;
+    }
+    
+    .login-btn:hover {
+      background-color: var(--primary-dark);
+    }
+    
+    .cancel-btn {
+      background-color: transparent;
+      border: none;
+      color: var(--ink-light);
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+    
+    .cancel-btn:hover {
+      color: var(--ink-dark);
+    }
+    
+    .login-error {
+      color: #e53e3e;
+      font-size: 0.9rem;
+      margin-top: var(--space-xs);
+      display: none;
+    }
+    
     /* Responsive */
     @media (max-width: 1024px) {
       .grid-3 {
@@ -859,6 +1164,15 @@
       
       .showcase-container {
         flex-direction: column;
+      }
+      
+      .cookie-consent {
+        flex-direction: column;
+        gap: var(--space-md);
+      }
+      
+      .cookie-text {
+        margin-bottom: var(--space-sm);
       }
     }
     
@@ -891,6 +1205,12 @@
       .pitch {
         font-size: 1.1rem;
         padding: var(--space-lg);
+      }
+      
+      .admin-panel {
+        max-width: 280px;
+        right: 10px;
+        bottom: 10px;
       }
     }
     
@@ -1229,76 +1549,60 @@
   <footer class="footer">
     <div class="container">
       <p>&copy; 2025 CalmTrack | Built for Families, Backed by Science</p>
-      <p class="timestamp">Last Updated: 2025-09-03 10:40:33</p>
+      <p class="timestamp">Last Updated: 2025-09-03 12:30:16</p>
     </div>
   </footer>
 
-  <script>
-    // Add intersection observer for fade-in animations
-    document.addEventListener('DOMContentLoaded', function() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-up');
-            
-            // If it has stagger-list children, add the in-view class
-            if (entry.target.querySelectorAll('.stagger-list').length > 0) {
-              entry.target.querySelectorAll('.stagger-list').forEach(list => {
-                list.classList.add('in-view');
-              });
-            }
-            
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.1
-      });
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-consent" id="cookieConsent">
+    <p class="cookie-text">We use cookies and track visits to improve your experience and analyze website traffic. By clicking "Accept", you consent to our use of cookies and visitor tracking, including geolocation data.</p>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-btn-accept" id="acceptCookies">Accept</button>
+      <button class="cookie-btn cookie-btn-decline" id="declineCookies">Decline</button>
+    </div>
+  </div>
+
+  <!-- Admin Panel Toggle Button -->
+  <div class="toggle-admin" id="toggleAdmin">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"></circle>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+    </svg>
+  </div>
+
+  <!-- Admin Login Modal -->
+  <div class="login-modal" id="loginModal">
+    <div class="login-form">
+      <h3 class="login-title">Admin Authentication</h3>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" class="form-input" placeholder="Enter admin username" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-input" placeholder="Enter password">
+        <div class="login-error" id="loginError">Invalid credentials. Please try again.</div>
+      </div>
+      <div class="form-group">
+        <label for="twofa">Two-Factor Code</label>
+        <input type="text" id="twofa" class="form-input" placeholder="Enter 2FA code" maxlength="6">
+      </div>
+      <div class="form-actions">
+        <button class="cancel-btn" id="cancelLogin">Cancel</button>
+        <button class="login-btn" id="submitLogin">Login</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Analytics Admin Panel -->
+  <div class="admin-panel" id="adminPanel">
+    <div class="admin-panel-header">
+      <h3 class="admin-panel-title">Visitor Analytics</h3>
+      <button class="admin-panel-close" id="closeAdmin">&times;</button>
+    </div>
+    <div class="admin-stats">
+      <div class="stat-row">
+        <span class="stat-label">Total Visits:</span>
+        <span class="stat-value" id="visitCount">Loading...</span>
+      </div>
       
-      document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('fade-up');
-        observer.observe(section);
-      });
-      
-      // Button ripple effect
-      document.querySelectorAll('.btn').forEach(button => {
-        button.addEventListener('click', function(e) {
-          const ripple = document.createElement('span');
-          const rect = button.getBoundingClientRect();
-          
-          const size = Math.max(rect.width, rect.height);
-          const x = e.clientX - rect.left - size/2;
-          const y = e.clientY - rect.top - size/2;
-          
-          ripple.style.width = ripple.style.height = `${size}px`;
-          ripple.style.left = `${x}px`;
-          ripple.style.top = `${y}px`;
-          ripple.classList.add('ripple');
-          
-          button.appendChild(ripple);
-          
-          setTimeout(() => {
-            ripple.remove();
-          }, 600);
-        });
-      });
-      
-      // Testimonial carousel functionality
-      const dots = document.querySelectorAll('.testimonial-dots .dot');
-      const cards = document.querySelectorAll('.testimonial-card');
-      
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          // Update active dot
-          document.querySelector('.dot.active').classList.remove('active');
-          dot.classList.add('active');
-          
-          // Hide all cards and show the selected one
-          cards.forEach(card => card.style.display = 'none');
-          cards[index].style.display = 'block';
-        });
-      });
-    });
-  </script>
-</body>
-</html>
