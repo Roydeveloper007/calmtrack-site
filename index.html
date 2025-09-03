@@ -143,7 +143,7 @@
       position: relative;
       background: var(--bg-cream);
       color: var(--ink);
-      padding: var(--space-xxl) 0;
+      padding: var(--space-xxl) 0 var(--space-xl);
       text-align: center;
     }
     
@@ -166,15 +166,16 @@
     /* Logo styling */
     .brand {
       text-align: center;
-      margin-bottom: var(--space-xl);
+      margin-bottom: var(--space-xxl);
       position: relative;
+      padding: var(--space-xl) 0;
     }
     
     .brand-logo {
-      width: 300px;
-      max-width: 100%;
+      width: 500px; /* Increased from 400px to 500px */
+      max-width: 90%;
       height: auto;
-      margin: 0 auto var(--space-md);
+      margin: 0 auto var(--space-lg);
       animation: float 4s ease-in-out infinite;
     }
     
@@ -199,17 +200,17 @@
     
     .logo-divider {
       width: 100%;
-      max-width: 300px;
+      max-width: 600px; /* Increased from 300px to match image proportions */
       height: 1px;
       background-color: var(--primary);
-      margin: var(--space-md) auto;
+      margin: var(--space-lg) auto var(--space-xxl);
       opacity: 0.5;
     }
     
     /* Navigation */
     .nav {
       display: flex;
-      gap: var(--space-md);
+      gap: var(--space-lg); /* Increased from md to lg */
       justify-content: center;
       margin-top: var(--space-xl);
       flex-wrap: wrap;
@@ -227,6 +228,7 @@
       position: relative;
       overflow: hidden;
       font-family: 'Inter', sans-serif;
+      min-width: 160px; /* Added minimum width to match design */
     }
     
     .btn-primary {
@@ -1227,7 +1229,7 @@
   <footer class="footer">
     <div class="container">
       <p>&copy; 2025 CalmTrack | Built for Families, Backed by Science</p>
-      <p class="timestamp">Last Updated: 2025-09-03 09:14:26</p>
+      <p class="timestamp">Last Updated: 2025-09-03 09:45:25</p>
     </div>
   </footer>
 
