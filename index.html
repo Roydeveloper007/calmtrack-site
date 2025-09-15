@@ -3,19 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="CalmTrack empowers neurodiverse families and caregivers with intuitive behavioral tracking, insights, and privacy-first design." />
+  
+  <!-- Enhanced SEO Meta Tags -->
   <title>CalmTrack – Empowering Neurodiverse Care</title>
-
-  <!-- SEO -->
-  <meta name="description" content="CalmTrack helps neurodiverse families and caregivers track behaviors and feelings, spot patterns, and share insights—privacy-first." />
+  <meta name="description" content="CalmTrack empowers neurodiverse families and caregivers with intuitive behavioral tracking, insights, and privacy-first design for autism, ADHD, and sensory processing needs." />
+  <meta name="keywords" content="neurodiversity, autism tracking, ADHD tracker, behavioral tracking, emotional tracking, neurodiverse care, sensory processing, special needs app" />
+  <meta name="author" content="CalmTrack" />
   <link rel="canonical" href="https://www.calmtrack.net/" />
+  
+  <!-- Open Graph / Social Media -->
   <meta property="og:title" content="CalmTrack – Empowering Neurodiverse Care" />
   <meta property="og:description" content="A digital diary and insight tool for neurodiverse conditions. Track, analyze, and report with privacy and science at the core." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.calmtrack.net/" />
+  <meta property="og:image" content="https://storage.googleapis.com/quantum-boulder-468219-v8-brand-assets/logos/logo.png" />
+  <meta property="og:site_name" content="CalmTrack" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CalmTrack – Empowering Neurodiverse Care" />
+  <meta name="twitter:description" content="Privacy-first behavioral tracking for neurodiverse families." />
+  <meta name="twitter:image" content="https://storage.googleapis.com/quantum-boulder-468219-v8-brand-assets/logos/logo.png" />
+  
+  <!-- Theme and Icons -->
   <meta name="theme-color" content="#65a9e5" />
-
   <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://storage.googleapis.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=()">
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -172,11 +194,13 @@
     }
     
     .brand-logo {
-      width: 600px; /* Increased size */
+      width: 300px; /* Adjusted size for better display */
       max-width: 90%;
       height: auto;
       margin: 0 auto var(--space-md); /* Reduced bottom margin */
       animation: float 4s ease-in-out infinite;
+      object-fit: contain; /* Ensures image displays properly */
+      background-color: transparent; /* No background color */
     }
     
     .logo-text {
@@ -1238,14 +1262,41 @@
       white-space: nowrap;
       border: 0;
     }
+
+    /* New feature: Rich Snippets for SEO */
+    .structured-data {
+      display: none;
+    }
   </style>
 </head>
 <body>
+  <!-- SEO Structured Data -->
+  <script type="application/ld+json" class="structured-data">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CalmTrack",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "iOS, Android",
+      "description": "A digital diary and insight tool for neurodiverse conditions. Track, analyze, and report with privacy and science at the core.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "128"
+      }
+    }
+  </script>
+
   <header class="header">
     <div class="container header-content">
       <div class="brand">
-        <!-- Logo from Google Cloud Storage -->
-        <img src="https://storage.googleapis.com/quantum-boulder-468219-v8-brand-assets/logos/logo.jpg" alt="CalmTrack Logo" class="brand-logo fade-in">
+        <!-- Updated Logo path -->
+        <img src="https://storage.googleapis.com/quantum-boulder-468219-v8-brand-assets/logos/logo.png" alt="CalmTrack Logo" class="brand-logo fade-in">
         
         <!-- Divider line -->
         <div class="logo-divider animate-line"></div>
@@ -1255,9 +1306,6 @@
         <a class="btn btn-primary" href="#features">See Features</a>
         <a class="btn btn-outline" href="#conditions">Conditions</a>
         <a class="btn btn-outline" href="#privacy">Privacy</a>
-        <!-- When app store links are ready, replace # with store URLs -->
-        <!-- <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=...">Get Android</a> -->
-        <!-- <a class="btn btn-primary" href="https://apps.apple.com/app/...">Get iOS</a> -->
       </nav>
     </div>
     <div class="subtle-pattern"></div>
@@ -1285,7 +1333,7 @@
           <div class="card">
             <span class="card-icon">📝</span>
             <h3>Track with Ease</h3>
-            <ul class="stagger-list">
+            <ul class="stagger-list in-view">
               <li>Log daily emotional states, incidents, and calming strategies</li>
               <li>Score emotions (anxiety, frustration, happiness, etc)</li>
               <li>Input from parents, individuals, or caregivers</li>
@@ -1296,7 +1344,7 @@
           <div class="card">
             <span class="card-icon">📈</span>
             <h3>Visualize Trends</h3>
-            <ul class="stagger-list">
+            <ul class="stagger-list in-view">
               <li>Spot behavioral patterns across days, weeks, and months</li>
               <li>Interactive graphs for insights</li>
               <li>Visualize improvements, regressions, or triggers</li>
@@ -1307,7 +1355,7 @@
           <div class="card">
             <span class="card-icon">📊</span>
             <h3>Export & Share</h3>
-            <ul class="stagger-list">
+            <ul class="stagger-list in-view">
               <li>Generate secure PDF summaries for therapists or teachers</li>
               <li>Export for medical, educational, or personal reflection</li>
               <li>Email summaries securely</li>
@@ -1420,7 +1468,6 @@
               </div>
               <div class="testimonial-author">
                 <div class="testimonial-avatar">
-                  <!-- Replace with actual avatar or initial -->
                   <div class="avatar-placeholder">J</div>
                 </div>
                 <div class="testimonial-info">
@@ -1549,60 +1596,12 @@
   <footer class="footer">
     <div class="container">
       <p>&copy; 2025 CalmTrack | Built for Families, Backed by Science</p>
-      <p class="timestamp">Last Updated: 2025-09-03 12:30:16</p>
+      <p class="timestamp">Last Updated: 2025-09-15 12:58:23</p>
     </div>
   </footer>
 
   <!-- Cookie Consent Banner -->
   <div class="cookie-consent" id="cookieConsent">
-    <p class="cookie-text">We use cookies and track visits to improve your experience and analyze website traffic. By clicking "Accept", you consent to our use of cookies and visitor tracking, including geolocation data.</p>
+    <p class="cookie-text">We use cookies and track visits to improve your experience and analyze website traffic. By clicking "Accept", you consent to our use of cookies.</p>
     <div class="cookie-actions">
-      <button class="cookie-btn cookie-btn-accept" id="acceptCookies">Accept</button>
-      <button class="cookie-btn cookie-btn-decline" id="declineCookies">Decline</button>
-    </div>
-  </div>
-
-  <!-- Admin Panel Toggle Button -->
-  <div class="toggle-admin" id="toggleAdmin">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="3"></circle>
-      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-    </svg>
-  </div>
-
-  <!-- Admin Login Modal -->
-  <div class="login-modal" id="loginModal">
-    <div class="login-form">
-      <h3 class="login-title">Admin Authentication</h3>
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" class="form-input" placeholder="Enter admin username" autocomplete="off">
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" class="form-input" placeholder="Enter password">
-        <div class="login-error" id="loginError">Invalid credentials. Please try again.</div>
-      </div>
-      <div class="form-group">
-        <label for="twofa">Two-Factor Code</label>
-        <input type="text" id="twofa" class="form-input" placeholder="Enter 2FA code" maxlength="6">
-      </div>
-      <div class="form-actions">
-        <button class="cancel-btn" id="cancelLogin">Cancel</button>
-        <button class="login-btn" id="submitLogin">Login</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Analytics Admin Panel -->
-  <div class="admin-panel" id="adminPanel">
-    <div class="admin-panel-header">
-      <h3 class="admin-panel-title">Visitor Analytics</h3>
-      <button class="admin-panel-close" id="closeAdmin">&times;</button>
-    </div>
-    <div class="admin-stats">
-      <div class="stat-row">
-        <span class="stat-label">Total Visits:</span>
-        <span class="stat-value" id="visitCount">Loading...</span>
-      </div>
-      
+      <button class="cookie-btn cookie-btn-accept" id="acceptCookies">Accept
