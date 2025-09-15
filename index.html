@@ -4,58 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <!-- Enhanced SEO -->
-  <title>CalmTrack – Behavioral Tracking for Neurodiverse Families</title>
-  <meta name="description" content="CalmTrack helps families track behaviors, identify patterns, and support neurodiverse individuals with autism, ADHD, and sensory processing challenges." />
-  <link rel="canonical" href="https://www.calmtrack.net/" />
+  <!-- Enhanced SEO Meta Tags -->
+  <title>CalmTrack – Behavioral Tracking for Neurodivergent Care | ADHD, Autism, Anxiety</title>
+  <meta name="description" content="CalmTrack helps track behaviors and emotions for autism, ADHD, anxiety, and sensory processing. A privacy-first digital diary for neurodiverse families and caregivers." />
+  <meta name="keywords" content="autism tracker, ADHD diary, anxiety tracking, neurodiversity app, sensory processing, tourette syndrome, behavioral tracking, emotional regulation, neurodiverse solution, medical app, calm solution, digital diary" />
   
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="CalmTrack – Empowering Neurodiverse Care" />
-  <meta property="og:description" content="A digital diary and insight tool for neurodiverse conditions. Track, analyze, and report with privacy and science at the core." />
+  <link rel="canonical" href="https://www.calmtrack.net/" />
+  <meta property="og:title" content="CalmTrack – Behavioral Tracking for Neurodivergent Care" />
+  <meta property="og:description" content="Digital diary and insight tool for autism, ADHD, anxiety and sensory processing. Track, analyze, and report with privacy and science at the core." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.calmtrack.net/" />
-  <meta property="og:image" content="https://storage.googleapis.com/quantum-boulder-468219-v8-brand-assets/logos/og-image.jpg" />
+  <meta property="og:image" content="https://storage.googleapis.com/quantum-boulder-468219-v8-brand-assets/logos/logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   
-  <!-- Structured Data for SEO -->
+  <!-- Theme and Appearance -->
+  <meta name="theme-color" content="#65a9e5" />
+  <link rel="icon" href="https://storage.googleapis.com/quantum-boulder-468219-v8-brand-assets/logos/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://storage.googleapis.com/quantum-boulder-468219-v8-brand-assets/logos/apple-touch-icon.png" />
+  
+  <!-- Structured Data for Rich Results -->
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "CalmTrack",
-      "applicationCategory": "HealthApplication",
-      "operatingSystem": "iOS, Android",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "description": "A behavioral tracking app for families supporting neurodiverse individuals",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "24"
-      }
-    }
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CalmTrack",
+    "description": "A behavioral and emotional tracking app for neurodivergent individuals and their caregivers.",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "HealthApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "keywords": "autism, ADHD, anxiety, sensory processing, behavioral tracking, emotional regulation"
+  }
   </script>
-  
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  
-  <!-- Preconnect to domains for faster loading -->
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://storage.googleapis.com">
-  
-  <!-- Preload key assets -->
-  <link rel="preload" href="https://storage.googleapis.com/quantum-boulder-468219-v8-brand-assets/logos/logo.png" as="image" type="image/png" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
-  
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Custom Font: The Seasons -->
@@ -215,6 +203,14 @@
       height: auto;
       margin: 0 auto var(--space-md); /* Reduced bottom margin */
       animation: float 4s ease-in-out infinite;
+    }
+
+    .brand-name {
+      font-family: 'The Seasons', serif;
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-top: var(--space-sm);
+      display: block;
     }
     
     .logo-text {
@@ -867,309 +863,112 @@
       animation: drawLine 1.5s ease forwards 0.5s;
     }
     
-    /* Analytics Admin Panel Styles */
-    .admin-panel {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: var(--white);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-lg);
-      padding: var(--space-md);
-      z-index: 1000;
-      max-width: 320px;
+    /* SEO/Speed Optimized Styles */
+    .lazy-load {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      border: 1px solid var(--primary-light);
-      text-align: left;
+      transition: opacity 0.5s ease;
     }
     
-    .admin-panel.visible {
+    .lazy-load.loaded {
       opacity: 1;
-      transform: translateY(0);
     }
     
-    .admin-panel-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: var(--space-sm);
-    }
-    
-    .admin-panel-title {
-      font-family: 'The Seasons', serif;
-      margin: 0;
-      font-size: 1rem;
-      color: var(--primary);
-    }
-    
-    .admin-panel-close {
-      background: none;
-      border: none;
-      color: var(--ink-light);
-      cursor: pointer;
-      font-size: 1.2rem;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      transition: background-color 0.2s ease;
-    }
-    
-    .admin-panel-close:hover {
-      background-color: var(--gray-100);
-      color: var(--ink-dark);
-    }
-    
-    .admin-stats {
-      margin-bottom: var(--space-md);
-    }
-    
-    .stat-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: var(--space-xs);
-      font-size: 0.9rem;
-    }
-    
-    .stat-label {
-      color: var(--ink-dark);
-      font-weight: 500;
-    }
-    
-    .stat-value {
-      color: var(--primary);
-      font-weight: 600;
-    }
-    
-    .admin-actions {
-      display: flex;
-      gap: var(--space-sm);
-    }
-    
-    .admin-btn {
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      padding: var(--space-xs) var(--space-sm);
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      font-size: 0.8rem;
-      flex: 1;
-      transition: background-color 0.2s ease;
-    }
-    
-    .admin-btn:hover {
-      background-color: var(--primary-dark);
-    }
-    
-    .map-preview {
-      width: 100%;
-      height: 150px;
-      background-color: var(--gray-100);
-      border-radius: var(--radius-sm);
-      margin-top: var(--space-sm);
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .map-preview iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    
-    /* Cookie consent banner */
-    .cookie-consent {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: var(--white);
-      padding: var(--space-md) var(--space-lg);
-      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transform: translateY(100%);
-      transition: transform 0.3s ease;
-    }
-    
-    .cookie-consent.visible {
-      transform: translateY(0);
-    }
-    
-    .cookie-text {
-      margin: 0;
-      flex: 1;
-      font-size: 0.9rem;
-      color: var(--ink);
-    }
-    
-    .cookie-actions {
-      display: flex;
-      gap: var(--space-sm);
-    }
-    
-    .cookie-btn {
-      padding: var(--space-xs) var(--space-md);
-      border-radius: var(--radius-sm);
-      border: none;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    
-    .cookie-btn-accept {
-      background-color: var(--primary);
-      color: white;
-    }
-    
-    .cookie-btn-accept:hover {
-      background-color: var(--primary-dark);
-    }
-    
-    .cookie-btn-decline {
-      background-color: var(--gray-100);
-      color: var(--ink-dark);
-    }
-    
-    .cookie-btn-decline:hover {
-      background-color: var(--gray-200);
-    }
-    
-    /* Toggle Admin Panel Button */
-    .toggle-admin {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: var(--primary);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: var(--shadow-md);
-      z-index: 999;
-      transition: all 0.2s ease;
-    }
-    
-    .toggle-admin:hover {
-      transform: scale(1.1);
-      background-color: var(--primary-dark);
-    }
-    
-    /* Admin login modal */
-    .login-modal {
+    /* Brand bar for minimized windows */
+    .brand-bar {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow-md);
+      padding: var(--space-sm) var(--space-md);
       display: flex;
       align-items: center;
-      justify-content: center;
-      z-index: 1001;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
+      justify-content: space-between;
+      z-index: 100;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+      backdrop-filter: blur(8px);
     }
     
-    .login-modal.visible {
-      opacity: 1;
-      pointer-events: auto;
+    .brand-bar.visible {
+      transform: translateY(0);
     }
     
-    .login-form {
-      background-color: var(--white);
-      padding: var(--space-xl);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-lg);
-      width: 90%;
-      max-width: 400px;
+    .brand-bar-logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
     }
     
-    .login-title {
-      text-align: center;
-      margin-bottom: var(--space-lg);
+    .brand-bar-logo img {
+      height: 32px;
+      width: auto;
+    }
+    
+    .brand-bar-name {
       font-family: 'The Seasons', serif;
+      font-size: 1.1rem;
+      color: var(--primary);
+      font-weight: normal;
+      margin: 0;
+    }
+    
+    .brand-bar-actions {
+      display: flex;
+      gap: var(--space-sm);
+    }
+    
+    .brand-bar-btn {
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    /* Sticky behavior for the table of contents */
+    .toc {
+      position: sticky;
+      top: 20px;
+      padding: var(--space-md);
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      max-width: 250px;
+      margin-bottom: var(--space-lg);
+    }
+    
+    .toc-title {
+      font-family: 'The Seasons', serif;
+      font-size: 1.1rem;
+      margin-bottom: var(--space-md);
       color: var(--primary);
     }
     
-    .form-group {
-      margin-bottom: var(--space-md);
+    .toc-list {
+      list-style: none;
     }
     
-    .form-group label {
-      display: block;
+    .toc-list li {
       margin-bottom: var(--space-xs);
+    }
+    
+    .toc-link {
+      display: block;
+      padding: var(--space-xs);
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+    
+    .toc-link:hover {
+      background: rgba(101, 169, 229, 0.1);
+      padding-left: var(--space-sm);
+    }
+    
+    .toc-link.active {
+      background: rgba(101, 169, 229, 0.1);
+      border-left: 2px solid var(--primary);
       font-weight: 500;
-      color: var(--ink-dark);
-    }
-    
-    .form-input {
-      width: 100%;
-      padding: var(--space-md);
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius-md);
-      font-family: inherit;
-      transition: border-color 0.2s ease;
-    }
-    
-    .form-input:focus {
-      border-color: var(--primary);
-      outline: none;
-    }
-    
-    .form-actions {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: var(--space-lg);
-    }
-    
-    .login-btn {
-      background-color: var(--primary);
-      color: var(--white);
-      border: none;
-      padding: var(--space-sm) var(--space-xl);
-      border-radius: var(--radius-md);
-      cursor: pointer;
-      font-weight: 500;
-      transition: background-color 0.2s ease;
-    }
-    
-    .login-btn:hover {
-      background-color: var(--primary-dark);
-    }
-    
-    .cancel-btn {
-      background-color: transparent;
-      border: none;
-      color: var(--ink-light);
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: color 0.2s ease;
-    }
-    
-    .cancel-btn:hover {
-      color: var(--ink-dark);
-    }
-    
-    .login-error {
-      color: #e53e3e;
-      font-size: 0.9rem;
-      margin-top: var(--space-xs);
-      display: none;
     }
     
     /* Responsive */
@@ -1279,11 +1078,26 @@
   </style>
 </head>
 <body>
+  <!-- Brand Bar that appears when page is scrolled -->
+  <div class="brand-bar" id="brandBar">
+    <div class="brand-bar-logo">
+      <img src="https://storage.googleapis.com/quantum-boulder-468219-v8-brand-assets/logos/logo.png" alt="CalmTrack" />
+      <h2 class="brand-bar-name">CalmTrack</h2>
+    </div>
+    <div class="brand-bar-actions">
+      <a href="#features" class="btn btn-outline brand-bar-btn">Features</a>
+      <a href="#status" class="btn btn-primary brand-bar-btn">Get Started</a>
+    </div>
+  </div>
+
   <header class="header">
     <div class="container header-content">
       <div class="brand">
-        <!-- Updated logo path to PNG format -->
+        <!-- Updated logo path to use PNG instead of JPG -->
         <img src="https://storage.googleapis.com/quantum-boulder-468219-v8-brand-assets/logos/logo.png" alt="CalmTrack Logo" class="brand-logo fade-in">
+        
+        <!-- Added brand name below logo -->
+        <span class="brand-name">CalmTrack</span>
         
         <!-- Divider line -->
         <div class="logo-divider animate-line"></div>
@@ -1414,6 +1228,7 @@
           <a href="https://www.spdstar.org/basic/understanding-sensory-processing-disorder" class="cond" target="_blank" rel="noopener noreferrer">Sensory Processing</a>
           <a href="https://www.tourettes-action.org.uk/about-tourettes.html" class="cond" target="_blank" rel="noopener noreferrer">Tourette Syndrome</a>
           <a href="https://www.nimh.nih.gov/health/topics/anxiety-disorders" class="cond" target="_blank" rel="noopener noreferrer">Anxiety</a>
+          <a href="https://www.ptsd.va.gov/understand/what/index.asp" class="cond" target="_blank" rel="noopener noreferrer">PTSD</a>
           <a href="https://www.nhs.uk/mental-health/conditions/" class="cond" target="_blank" rel="noopener noreferrer">Other Conditions</a>
           <a href="https://www.nhs.uk/conditions/aspergers-syndrome/" class="cond" target="_blank" rel="noopener noreferrer">Asperger Profile</a>
           <a href="https://www.nidcd.nih.gov/health/central-auditory-processing-disorder" class="cond" target="_blank" rel="noopener noreferrer">Auditory Processing</a>
@@ -1426,6 +1241,7 @@
               <li><strong>Autism Spectrum Disorder (ASD)</strong> – affecting ~1 in 36 children</li>
               <li><strong>ADHD</strong> – impacts approximately 8.7% of children and 4.4% of adults globally</li>
               <li><strong>Sensory Processing Disorder (SPD)</strong> – commonly co-occurs with autism</li>
+              <li><strong>Anxiety Disorders</strong> – affects 30% of neurodivergent individuals</li>
               <li><strong>Tourette Syndrome</strong> – affects 1 in 162 children in the U.S.</li>
             </ul>
           </div>
@@ -1437,13 +1253,127 @@
               <li><strong>Data for specialists</strong> to make informed care decisions</li>
               <li><strong>Communication tools</strong> for school accommodations</li>
               <li><strong>Emotional regulation</strong> tracking for personal growth</li>
+              <li><strong>Pattern recognition</strong> for identifying triggers and solutions</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- Additional sections from original code remain unchanged -->
-      <!-- ... -->
+      <section class="section fade-up" id="testimonials">
+        <h2 class="section-title">What Families Say</h2>
+        <p class="text-center">Real stories from families using CalmTrack</p>
+        
+        <div class="testimonial-slider">
+          <div class="testimonial-track">
+            <!-- Individual testimonials -->
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <p>"CalmTrack has transformed how we understand our son's triggers. We've been able to reduce meltdowns by 70% by identifying patterns we never saw before."</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">
+                  <!-- Replace with actual avatar or initial -->
+                  <div class="avatar-placeholder">J</div>
+                </div>
+                <div class="testimonial-info">
+                  <strong>Jamie L.</strong>
+                  <span>Parent of a 7-year-old with ASD</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-card" style="display:none;">
+              <div class="testimonial-content">
+                <p>"As an occupational therapist, I recommend CalmTrack to all my clients. The data it provides helps me create more effective intervention plans tailored to each child's needs."</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">
+                  <div class="avatar-placeholder">S</div>
+                </div>
+                <div class="testimonial-info">
+                  <strong>Dr. Sarah M.</strong>
+                  <span>Pediatric Occupational Therapist</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-card" style="display:none;">
+              <div class="testimonial-content">
+                <p>"The privacy features were what sold me. I can share specific insights with my child's teacher without exposing all our private family data."</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">
+                  <div class="avatar-placeholder">R</div>
+                </div>
+                <div class="testimonial-info">
+                  <strong>Ray K.</strong>
+                  <span>Parent of teen with ADHD</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Navigation dots -->
+          <div class="testimonial-dots">
+            <button class="dot active" aria-label="Testimonial 1"></button>
+            <button class="dot" aria-label="Testimonial 2"></button>
+            <button class="dot" aria-label="Testimonial 3"></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section fade-up privacy-section" id="privacy">
+        <h2 class="section-title">Data Privacy & Protection</h2>
+        <div class="callout">
+          <h3>Your Data, Your Peace of Mind</h3>
+          <ul>
+            <li><strong>Data is always encrypted and protected on your device</strong> — your family's information stays safe and private, always.</li>
+            <li><strong>Automatic protection</strong> — CalmTrack quietly safeguards your information while you focus on what matters.</li>
+            <li><strong>You stay in control</strong> — data is never shared, sold, or sent to anyone unless you choose to do so.</li>
+            <li><strong>Peace of mind by design</strong> — every feature and update is built with your trust and privacy at the center.</li>
+          </ul>
+        </div>
+        
+        <div class="mt-lg">
+          <h3>Our Privacy Commitment</h3>
+          <ul>
+            <li><strong>Local-First Storage:</strong> Your data is stored securely on your own device by default.</li>
+            <li><strong>Encryption at Rest:</strong> When CalmTrack stores information, it is encrypted on your device.</li>
+            <li><strong>No Automatic Data Sharing:</strong> CalmTrack does <u>not</u> share your personal data with any third party.</li>
+            <li><strong>Explicit User Actions:</strong> Only when you choose to generate a report is your data processed for that specific action.</li>
+            <li><strong>No Tracking or Analytics:</strong> We do not use cookies, trackers, or analytics that collect personal information.</li>
+            <li><strong>Transparent Controls:</strong> You can delete your data at any time from within the app.</li>
+          </ul>
+          <p class="mt-lg text-center"><em>We designed CalmTrack to put you in control. Our privacy approach is simple: your data, your device, your rules.</em></p>
+        </div>
+      </section>
+
+      <section class="section fade-up" id="demo">
+        <h2 class="section-title">See How It Works</h2>
+        <p class="text-center">Watch CalmTrack in action</p>
+        
+        <div class="video-container">
+          <!-- This is a placeholder until you have the actual video -->
+          <div class="video-placeholder">
+            <div class="placeholder-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 5.14V19.14L19 12.14L8 5.14Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="placeholder-text">Demo video coming soon</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section fade-up community-section" id="community">
+        <h2 class="section-title">Community Services</h2>
+        <p>
+          CalmTrack strengthens communities by supporting those who need extra help—empowering families, caregivers, and educators to work together for positive change. The app's community services connect users to local support groups, facilitate communication with schools and professionals, and make it easier to find resources tailored for neurodiverse needs.
+        </p>
+        <p>
+          CalmTrack helps society by creating a network of understanding: it encourages shared learning, makes tracking and sharing progress simple, and helps celebrate every milestone—no matter how small. By bridging gaps between individuals and the wider community, CalmTrack ensures that everyone, especially those needing additional support, can participate fully and feel truly valued.
+        </p>
+      </section>
 
       <div class="final-thought">
         <span>🧩 CalmTrack is not just a tracker.</span><br>
@@ -1471,128 +1401,106 @@
   <footer class="footer">
     <div class="container">
       <p>&copy; 2025 CalmTrack | Built for Families, Backed by Science</p>
-      <p class="timestamp">Last Updated: 2025-09-15 13:10:04</p>
+      <p class="timestamp">Last Updated: 2025-09-15 13:23:28</p>
     </div>
   </footer>
 
   <!-- Cookie Consent Banner -->
   <div class="cookie-consent" id="cookieConsent">
-    <p class="cookie-text">We use cookies and track visits to improve your experience and analyze website traffic. By clicking "Accept", you consent to our use of cookies and visitor tracking, including geolocation data.</p>
+    <p class="cookie-text">We use cookies to improve your experience and analyze website traffic. By clicking "Accept", you consent to our use of cookies.</p>
     <div class="cookie-actions">
       <button class="cookie-btn cookie-btn-accept" id="acceptCookies">Accept</button>
       <button class="cookie-btn cookie-btn-decline" id="declineCookies">Decline</button>
     </div>
   </div>
 
-  <!-- SEO and Performance Optimization Script -->
+  <!-- JavaScript to enhance the site -->
   <script>
-    // Initialize IntersectionObserver to detect when elements enter viewport for animation
-    document.addEventListener('DOMContentLoaded', function() {
-      // Staggered list animations
-      const staggerLists = document.querySelectorAll('.stagger-list');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.2 });
-
-      staggerLists.forEach(list => {
-        observer.observe(list);
-      });
-      
-      // Cookie consent
-      const cookieConsent = document.getElementById('cookieConsent');
-      
-      // Check if user has already made a choice
-      const consentChoice = localStorage.getItem('cookieConsent');
-      
-      if (!consentChoice) {
-        // Show the consent banner after a short delay
-        setTimeout(() => {
-          cookieConsent.classList.add('visible');
-        }, 2000);
-      }
-      
-      // Accept cookies
-      document.getElementById('acceptCookies').addEventListener('click', () => {
-        localStorage.setItem('cookieConsent', 'accepted');
-        cookieConsent.classList.remove('visible');
-      });
-      
-      // Decline cookies
-      document.getElementById('declineCookies').addEventListener('click', () => {
-        localStorage.setItem('cookieConsent', 'declined');
-        cookieConsent.classList.remove('visible');
-      });
-      
-      // Button ripple effect
-      const buttons = document.querySelectorAll('.btn');
-      
-      buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
-          const x = e.clientX - e.target.getBoundingClientRect().left;
-          const y = e.clientY - e.target.getBoundingClientRect().top;
-          
-          const ripple = document.createElement('span');
-          ripple.classList.add('ripple');
-          ripple.style.left = `${x}px`;
-          ripple.style.top = `${y}px`;
-          
-          this.appendChild(ripple);
-          
-          setTimeout(() => {
-            ripple.remove();
-          }, 600);
-        });
-      });
-      
-      // Testimonial slider
-      const dots = document.querySelectorAll('.dot');
-      const testimonials = document.querySelectorAll('.testimonial-card');
-      
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          // Update active dot
-          dots.forEach(d => d.classList.remove('active'));
-          dot.classList.add('active');
-          
-          // Show corresponding testimonial
-          testimonials.forEach(t => t.style.display = 'none');
-          testimonials[index].style.display = 'block';
-        });
-      });
-      
-      // Load images lazily
-      if ('loading' in HTMLImageElement.prototype) {
-        const images = document.querySelectorAll("img[loading='lazy']");
-        images.forEach(img => {
-          img.src = img.dataset.src;
-        });
+    // Show the brand bar when scrolling down
+    window.addEventListener('scroll', function() {
+      const brandBar = document.getElementById('brandBar');
+      if (window.scrollY > 200) {
+        brandBar.classList.add('visible');
       } else {
-        // Fallback for browsers that don't support native lazy loading
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-        document.body.appendChild(script);
+        brandBar.classList.remove('visible');
       }
     });
 
-    // Fix for Safari mobile viewport height issues
-    window.addEventListener('resize', () => {
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    // Handle cookie consent
+    const cookieConsent = document.getElementById('cookieConsent');
+    
+    // Check if user has already made a choice
+    if (!localStorage.getItem('cookieConsent')) {
+      // Show after a short delay
+      setTimeout(() => {
+        cookieConsent.classList.add('visible');
+      }, 1500);
+    }
+    
+    document.getElementById('acceptCookies').addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      cookieConsent.classList.remove('visible');
     });
     
-    // Add Google Analytics placeholder - replace with real ID when ready
-    // This is just a template for future use - won't actually send data
-    function initAnalytics() {
-      if (localStorage.getItem('cookieConsent') === 'accepted') {
-        // Placeholder for future analytics implementation
-        console.log('Analytics would be initialized here');
-      }
-    }
+    document.getElementById('declineCookies').addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'declined');
+      cookieConsent.classList.remove('visible');
+    });
+
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    // Observe all stagger lists
+    document.querySelectorAll('.stagger-list').forEach(list => {
+      observer.observe(list);
+    });
+
+    // Handle testimonial slider
+    const dots = document.querySelectorAll('.dot');
+    const cards = document.querySelectorAll('.testimonial-card');
+    
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        // Hide all cards
+        cards.forEach(card => {
+          card.style.display = 'none';
+        });
+        
+        // Show the selected card
+        cards[index].style.display = 'block';
+        
+        // Update active dot
+        dots.forEach(d => d.classList.remove('active'));
+        dot.classList.add('active');
+      });
+    });
+    
+    // Ripple effect on buttons
+    const buttons = document.querySelectorAll('.btn');
+    
+    buttons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        const x = e.clientX - e.target.getBoundingClientRect().left;
+        const y = e.clientY - e.target.getBoundingClientRect().top;
+        
+        const ripple = document.createElement('span');
+        ripple.classList.add('ripple');
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
   </script>
 </body>
 </html>
