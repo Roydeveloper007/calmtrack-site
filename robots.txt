@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+# Disallow duplicate domains
+Disallow: https://quantum-boulder-468219-v8.web.app/
+Disallow: https://quantum-boulder-468219-v8.firebaseapp.com/
+Disallow: https://calmtrack.net/
+
+# Explicitly allow canonical
 Sitemap: https://www.calmtrack.net/sitemap.xml
