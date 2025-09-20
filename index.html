@@ -48,7 +48,7 @@
 
   <style>
     :root {
-      /* Enhanced Brand Colors - More sophisticated medical palette */
+      /* Enhanced Brand Colors */
       --primary: #65a9e5;
       --primary-light: #9bc7ee;
       --primary-dark: #4c8bc7;
@@ -67,7 +67,7 @@
       --success: #10b981;
       --warning: #f59e0b;
       
-      /* Enhanced Spacing System */
+      /* Spacing System */
       --space-xs: 0.25rem;
       --space-sm: 0.5rem;
       --space-md: 1rem;
@@ -76,14 +76,14 @@
       --space-xxl: 3rem;
       --space-3xl: 4rem;
       
-      /* Enhanced Shadows - More refined */
+      /* Shadows */
       --shadow-xs: 0 1px 2px rgba(81, 97, 115, 0.05);
       --shadow-sm: 0 1px 3px rgba(81, 97, 115, 0.08);
       --shadow-md: 0 4px 6px -1px rgba(81, 97, 115, 0.08), 0 2px 4px -1px rgba(81, 97, 115, 0.04);
       --shadow-lg: 0 10px 15px -3px rgba(81, 97, 115, 0.08), 0 4px 6px -2px rgba(81, 97, 115, 0.04);
       --shadow-xl: 0 20px 25px -5px rgba(81, 97, 115, 0.08), 0 10px 10px -5px rgba(81, 97, 115, 0.04);
       
-      /* Enhanced Border Radius */
+      /* Border Radius */
       --radius-xs: 0.125rem;
       --radius-sm: 0.25rem;
       --radius-md: 0.5rem;
@@ -126,7 +126,7 @@
       -moz-osx-font-smoothing: grayscale;
     }
     
-    /* Enhanced Typography */
+    /* Typography */
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Crimson Text', Georgia, serif;
       font-weight: 600;
@@ -168,14 +168,14 @@
       color: var(--primary-dark);
     }
     
-    /* Enhanced Container */
+    /* Container */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 var(--space-lg);
     }
     
-    /* Enhanced Header */
+    /* Header */
     .header {
       position: relative;
       background: var(--bg-cream);
@@ -201,7 +201,7 @@
       z-index: 1;
     }
     
-    /* FIXED: Enhanced Logo Section - Removed duplicate text */
+    /* FIXED: Brand Section - ONLY logo, NO text */
     .brand {
       text-align: center;
       margin-bottom: var(--space-xl);
@@ -218,7 +218,7 @@
       animation: float 6s ease-in-out infinite;
     }
 
-    /* REMOVED: .brand-name class and related duplicate text styling */
+    /* REMOVED ALL brand-name, logo-text, brand-name related styles */
     
     .tagline {
       font-family: 'Crimson Text', serif;
@@ -239,7 +239,7 @@
       border-radius: var(--radius-full);
     }
     
-    /* Enhanced Navigation */
+    /* Navigation */
     .nav {
       display: flex;
       gap: var(--space-lg);
@@ -248,7 +248,7 @@
       flex-wrap: wrap;
     }
     
-    /* Enhanced Buttons */
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -292,12 +292,12 @@
       box-shadow: var(--shadow-md);
     }
     
-    /* Enhanced Main Content */
+    /* Main Content */
     .main {
       padding: var(--space-3xl) 0;
     }
     
-    /* Enhanced Sections */
+    /* Sections */
     .section {
       background-color: var(--bg-white);
       border-radius: var(--radius-2xl);
@@ -347,7 +347,88 @@
       border-radius: var(--radius-full);
     }
     
-    /* Enhanced Grid System */
+    /* Demo Section - ENHANCED and PROMINENT */
+    .demo-section {
+      background: linear-gradient(135deg, var(--accent-soft) 0%, var(--bg-white) 100%);
+      border: 3px solid var(--primary-light);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .demo-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--primary), var(--primary-dark));
+    }
+
+    .demo-content {
+      text-align: center;
+      padding: var(--space-xxl) 0;
+    }
+
+    .demo-icon {
+      font-size: 5rem;
+      color: var(--primary);
+      margin-bottom: var(--space-xl);
+      opacity: 0.9;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .demo-status {
+      font-family: 'Inter', sans-serif;
+      font-size: var(--text-2xl);
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: var(--space-lg);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .demo-subtitle {
+      font-family: 'Crimson Text', serif;
+      font-size: var(--text-xl);
+      color: var(--ink-dark);
+      margin-bottom: var(--space-xl);
+      font-style: italic;
+    }
+
+    .demo-description {
+      font-size: var(--text-lg);
+      color: var(--ink);
+      max-width: 600px;
+      margin: 0 auto var(--space-xl);
+      line-height: 1.7;
+    }
+
+    .demo-features {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-xl);
+      flex-wrap: wrap;
+      margin-top: var(--space-xl);
+    }
+
+    .demo-feature {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      color: var(--ink);
+      font-size: var(--text-base);
+      font-weight: 500;
+    }
+
+    .demo-feature-icon {
+      color: var(--success);
+      font-size: var(--text-xl);
+      font-weight: bold;
+    }
+    
+    /* Grid System */
     .grid {
       display: grid;
       gap: var(--space-xl);
@@ -362,7 +443,7 @@
       grid-template-columns: repeat(2, 1fr);
     }
     
-    /* Enhanced Cards */
+    /* Cards */
     .card {
       background-color: var(--bg-white);
       border-radius: var(--radius-xl);
@@ -432,78 +513,8 @@
       top: 0;
       font-size: 0.8rem;
     }
-
-    /* NEW: Enhanced Demo Section */
-    .demo-section {
-      background: linear-gradient(135deg, var(--accent-soft) 0%, var(--bg-white) 100%);
-      border: 2px solid var(--primary-muted);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .demo-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--primary));
-    }
-
-    .demo-content {
-      text-align: center;
-      padding: var(--space-xl) 0;
-    }
-
-    .demo-icon {
-      font-size: 4rem;
-      color: var(--primary);
-      margin-bottom: var(--space-lg);
-      opacity: 0.8;
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    .demo-status {
-      font-family: 'Inter', sans-serif;
-      font-size: var(--text-lg);
-      color: var(--primary);
-      font-weight: 500;
-      margin-bottom: var(--space-md);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .demo-description {
-      font-size: var(--text-base);
-      color: var(--ink);
-      max-width: 500px;
-      margin: 0 auto var(--space-lg);
-      line-height: 1.7;
-    }
-
-    .demo-features {
-      display: flex;
-      justify-content: center;
-      gap: var(--space-xl);
-      flex-wrap: wrap;
-      margin-top: var(--space-xl);
-    }
-
-    .demo-feature {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      color: var(--ink-light);
-      font-size: var(--text-sm);
-    }
-
-    .demo-feature-icon {
-      color: var(--success);
-      font-size: var(--text-lg);
-    }
     
-    /* Enhanced Special Sections */
+    /* Special Sections */
     .pitch {
       background: linear-gradient(135deg, var(--primary-muted) 0%, rgba(255, 255, 255, 0.8) 100%);
       border-left: 4px solid var(--primary);
@@ -517,7 +528,7 @@
       line-height: 1.7;
     }
     
-    /* Enhanced Condition Links */
+    /* Condition Links */
     .cond-wrap {
       display: flex;
       flex-wrap: wrap;
@@ -549,7 +560,7 @@
       border-color: var(--primary);
     }
     
-    /* Enhanced Info Panels */
+    /* Info Panels */
     .note {
       background: linear-gradient(135deg, var(--primary-muted) 0%, var(--bg-white) 100%);
       border-left: 4px solid var(--primary);
@@ -570,7 +581,7 @@
       box-shadow: var(--shadow-sm);
     }
     
-    /* Enhanced Privacy Section */
+    /* Privacy Section */
     .privacy-section {
       background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, var(--accent-soft) 50%, var(--bg-white) 100%);
       border-radius: var(--radius-2xl);
@@ -589,138 +600,7 @@
       opacity: 0.15;
     }
     
-    /* Enhanced Testimonials */
-    .testimonial-slider {
-      position: relative;
-      max-width: 800px;
-      margin: var(--space-xl) auto;
-      overflow: hidden;
-    }
-
-    .testimonial-card {
-      padding: var(--space-xl);
-      background: linear-gradient(135deg, var(--bg-white) 0%, var(--accent-soft) 100%);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--gray-100);
-      position: relative;
-    }
-
-    .testimonial-card::before {
-      content: '"';
-      position: absolute;
-      top: -10px;
-      left: var(--space-lg);
-      font-size: 5rem;
-      opacity: 0.1;
-      font-family: Georgia, serif;
-      color: var(--primary);
-      line-height: 1;
-    }
-
-    .testimonial-content {
-      font-style: italic;
-      font-size: var(--text-lg);
-      margin-bottom: var(--space-xl);
-      position: relative;
-      color: var(--ink-dark);
-      line-height: 1.7;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: var(--space-lg);
-    }
-
-    .testimonial-avatar {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-    }
-
-    .avatar-placeholder {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      font-size: var(--text-xl);
-    }
-
-    .testimonial-info strong {
-      font-weight: 600;
-      color: var(--ink-dark);
-      font-size: var(--text-base);
-    }
-
-    .testimonial-info span {
-      font-size: var(--text-sm);
-      color: var(--ink-light);
-      margin-top: var(--space-xs);
-      display: block;
-    }
-
-    .testimonial-dots {
-      display: flex;
-      justify-content: center;
-      gap: var(--space-md);
-      margin-top: var(--space-xl);
-    }
-
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--gray-300);
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .dot.active {
-      background: var(--primary);
-      transform: scale(1.2);
-    }
-    
-    /* Enhanced Footer */
-    .footer {
-      background: linear-gradient(135deg, var(--bg-white) 0%, var(--gray-50) 100%);
-      text-align: center;
-      padding: var(--space-3xl) var(--space-lg);
-      color: var(--ink-light);
-      margin-top: var(--space-3xl);
-      border-top: 1px solid var(--gray-200);
-    }
-    
-    .footer .timestamp {
-      margin-top: var(--space-md);
-      font-size: var(--text-sm);
-      opacity: 0.7;
-    }
-    
-    /* Enhanced Final Thought */
-    .final-thought {
-      font-family: 'Crimson Text', serif;
-      text-align: center;
-      font-size: var(--text-2xl);
-      font-weight: 400;
-      color: var(--primary);
-      margin: var(--space-3xl) 0;
-      padding: var(--space-xl);
-      background: linear-gradient(135deg, var(--primary-muted) 0%, var(--accent-soft) 100%);
-      border-radius: var(--radius-2xl);
-      border: 2px solid rgba(101, 169, 229, 0.1);
-      line-height: 1.5;
-    }
-    
-    /* Enhanced Brand Bar */
+    /* Brand Bar */
     .brand-bar {
       position: fixed;
       top: 0;
@@ -774,7 +654,38 @@
       font-weight: 500;
     }
     
-    /* Enhanced Animations */
+    /* Final Thought */
+    .final-thought {
+      font-family: 'Crimson Text', serif;
+      text-align: center;
+      font-size: var(--text-2xl);
+      font-weight: 400;
+      color: var(--primary);
+      margin: var(--space-3xl) 0;
+      padding: var(--space-xl);
+      background: linear-gradient(135deg, var(--primary-muted) 0%, var(--accent-soft) 100%);
+      border-radius: var(--radius-2xl);
+      border: 2px solid rgba(101, 169, 229, 0.1);
+      line-height: 1.5;
+    }
+    
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, var(--bg-white) 0%, var(--gray-50) 100%);
+      text-align: center;
+      padding: var(--space-3xl) var(--space-lg);
+      color: var(--ink-light);
+      margin-top: var(--space-3xl);
+      border-top: 1px solid var(--gray-200);
+    }
+    
+    .footer .timestamp {
+      margin-top: var(--space-md);
+      font-size: var(--text-sm);
+      opacity: 0.7;
+    }
+    
+    /* Animations */
     @keyframes float {
       0%, 100% {
         transform: translateY(0px);
@@ -786,7 +697,7 @@
     
     @keyframes pulse {
       0%, 100% {
-        opacity: 0.8;
+        opacity: 0.9;
         transform: scale(1);
       }
       50% {
@@ -814,7 +725,20 @@
       animation: fadeUp 1.2s ease forwards;
     }
     
-    /* Enhanced Responsive Design */
+    /* Utility Classes */
+    .text-center {
+      text-align: center;
+    }
+    
+    .mt-lg {
+      margin-top: var(--space-lg);
+    }
+    
+    .mb-lg {
+      margin-bottom: var(--space-lg);
+    }
+    
+    /* Responsive Design */
     @media (max-width: 1024px) {
       .grid-3 {
         grid-template-columns: repeat(2, 1fr);
@@ -911,7 +835,7 @@
       }
     }
     
-    /* Accessibility Enhancements */
+    /* Accessibility */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -920,15 +844,12 @@
       }
     }
     
-    /* Focus Styles for Better Accessibility */
     .btn:focus,
-    .cond:focus,
-    .dot:focus {
+    .cond:focus {
       outline: 2px solid var(--primary);
       outline-offset: 2px;
     }
     
-    /* High Contrast Mode Support */
     @media (prefers-contrast: high) {
       :root {
         --primary: #0066cc;
@@ -954,10 +875,10 @@
   <header class="header">
     <div class="container header-content">
       <div class="brand">
-        <!-- FIXED: Only logo image, no duplicate text -->
+        <!-- ONLY LOGO - NO DUPLICATE TEXT -->
         <img src="https://storage.googleapis.com/quantum-boulder-468219-v8-brand-assets/logos/logo.png" alt="CalmTrack - Behavioral Tracking for Neurodivergent Care" class="brand-logo fade-in">
         
-        <!-- Enhanced tagline -->
+        <!-- Tagline below logo -->
         <p class="tagline">Empowering neurodiverse families through thoughtful behavioral insights</p>
         
         <!-- Divider line -->
@@ -965,37 +886,24 @@
       </div>
 
       <nav class="nav" aria-label="primary navigation">
-        <a class="btn btn-primary" href="#features">Explore Features</a>
-        <a class="btn btn-outline" href="#demo">View Demo</a>
-        <a class="btn btn-outline" href="#privacy">Privacy First</a>
+        <a class="btn btn-primary" href="#demo">View Demo</a>
+        <a class="btn btn-outline" href="#features">Features</a>
+        <a class="btn btn-outline" href="#privacy">Privacy</a>
       </nav>
     </div>
   </header>
 
   <main class="main">
     <div class="container">
-      <section class="section fade-up" id="vision">
-        <h2 class="section-title">Our Vision</h2>
-        <p class="text-center">
-          To empower individuals and caregivers with a simple yet powerful tool to track emotional and behavioral health, identify triggers, and facilitate well-informed care decisions that lead to meaningful improvements in daily life.
-        </p>
-      </section>
-      
-      <section class="section fade-up" id="mission">
-        <h2 class="section-title">Our Mission</h2>
-        <p style="text-align:center;">
-          We streamline behavioral and emotional tracking through intuitive, customizable logging and analysis tools, enabling parents, caregivers, and healthcare professionals to provide personalized, evidence-based care to neurodiverse individuals.
-        </p>
-      </section>
-
-      <!-- NEW: Enhanced Demo Section -->
+      <!-- DEMO SECTION - NOW FIRST AND PROMINENT -->
       <section class="section demo-section fade-up" id="demo">
         <h2 class="section-title">Interactive Demo</h2>
         <div class="demo-content">
           <div class="demo-icon">🎯</div>
           <div class="demo-status">Coming Soon</div>
+          <div class="demo-subtitle">Experience CalmTrack's intuitive interface</div>
           <p class="demo-description">
-            Experience CalmTrack's intuitive interface and powerful tracking capabilities through our interactive demo. See firsthand how easy it is to log emotions, identify patterns, and generate meaningful insights for better care.
+            See firsthand how easy it is to log emotions, identify patterns, and generate meaningful insights for better care. Our interactive demo showcases the full CalmTrack experience designed specifically for neurodiverse families.
           </p>
           
           <div class="demo-features">
@@ -1017,6 +925,20 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <section class="section fade-up" id="vision">
+        <h2 class="section-title">Our Vision</h2>
+        <p class="text-center">
+          To empower individuals and caregivers with a simple yet powerful tool to track emotional and behavioral health, identify triggers, and facilitate well-informed care decisions that lead to meaningful improvements in daily life.
+        </p>
+      </section>
+      
+      <section class="section fade-up" id="mission">
+        <h2 class="section-title">Our Mission</h2>
+        <p style="text-align:center;">
+          We streamline behavioral and emotional tracking through intuitive, customizable logging and analysis tools, enabling parents, caregivers, and healthcare professionals to provide personalized, evidence-based care to neurodiverse individuals.
+        </p>
       </section>
 
       <section class="section fade-up" id="features">
@@ -1077,13 +999,13 @@
         </p>
         
         <div class="cond-wrap">
-          <a href="https://www.autism.org.uk/what-is-autism" class="cond" target="_blank" rel="noopener noreferrer" aria-label="Learn about Autism">Autism Spectrum</a>
-          <a href="https://www.cdc.gov/ncbddd/adhd/facts.html" class="cond" target="_blank" rel="noopener noreferrer" aria-label="Learn about ADHD">ADHD</a>
-          <a href="https://www.spdstar.org/basic/understanding-sensory-processing-disorder" class="cond" target="_blank" rel="noopener noreferrer" aria-label="Learn about Sensory Processing">Sensory Processing</a>
-          <a href="https://www.tourettes-action.org.uk/about-tourettes.html" class="cond" target="_blank" rel="noopener noreferrer" aria-label="Learn about Tourette Syndrome">Tourette Syndrome</a>
-          <a href="https://www.nimh.nih.gov/health/topics/anxiety-disorders" class="cond" target="_blank" rel="noopener noreferrer" aria-label="Learn about Anxiety">Anxiety Disorders</a>
-          <a href="https://www.ptsd.va.gov/understand/what/index.asp" class="cond" target="_blank" rel="noopener noreferrer" aria-label="Learn about PTSD">PTSD</a>
-          <a href="https://www.nhs.uk/mental-health/conditions/" class="cond" target="_blank" rel="noopener noreferrer" aria-label="Learn about other conditions">Other Conditions</a>
+          <a href="https://www.autism.org.uk/what-is-autism" class="cond" target="_blank" rel="noopener noreferrer">Autism Spectrum</a>
+          <a href="https://www.cdc.gov/ncbddd/adhd/facts.html" class="cond" target="_blank" rel="noopener noreferrer">ADHD</a>
+          <a href="https://www.spdstar.org/basic/understanding-sensory-processing-disorder" class="cond" target="_blank" rel="noopener noreferrer">Sensory Processing</a>
+          <a href="https://www.tourettes-action.org.uk/about-tourettes.html" class="cond" target="_blank" rel="noopener noreferrer">Tourette Syndrome</a>
+          <a href="https://www.nimh.nih.gov/health/topics/anxiety-disorders" class="cond" target="_blank" rel="noopener noreferrer">Anxiety Disorders</a>
+          <a href="https://www.ptsd.va.gov/understand/what/index.asp" class="cond" target="_blank" rel="noopener noreferrer">PTSD</a>
+          <a href="https://www.nhs.uk/mental-health/conditions/" class="cond" target="_blank" rel="noopener noreferrer">Other Conditions</a>
         </div>
         
         <div class="grid grid-2 mt-lg">
@@ -1107,66 +1029,6 @@
               <li><strong>Emotional regulation</strong> tracking for personal development</li>
               <li><strong>Family coordination</strong> across multiple caregivers and settings</li>
             </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section fade-up" id="testimonials">
-        <h2 class="section-title">Real Stories, Real Impact</h2>
-        <p class="text-center">Hear from families and professionals using CalmTrack</p>
-        
-        <div class="testimonial-slider">
-          <div class="testimonial-track">
-            <div class="testimonial-card">
-              <div class="testimonial-content">
-                <p>"CalmTrack has transformed how we understand our son's behavioral patterns. We've reduced meltdown frequency by 70% by identifying environmental triggers we never noticed before. It's like having a behavioral specialist in our pocket."</p>
-              </div>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar">
-                  <div class="avatar-placeholder">J</div>
-                </div>
-                <div class="testimonial-info">
-                  <strong>Jamie L.</strong>
-                  <span>Parent of 7-year-old with ASD</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="testimonial-card" style="display:none;">
-              <div class="testimonial-content">
-                <p>"As a pediatric occupational therapist, I recommend CalmTrack to all my clients. The detailed behavioral data helps me create evidence-based intervention plans that are truly personalized to each child's unique needs and patterns."</p>
-              </div>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar">
-                  <div class="avatar-placeholder">S</div>
-                </div>
-                <div class="testimonial-info">
-                  <strong>Dr. Sarah M.</strong>
-                  <span>Pediatric Occupational Therapist</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="testimonial-card" style="display:none;">
-              <div class="testimonial-content">
-                <p>"The privacy features give me complete peace of mind. I can share specific behavioral insights with my teenager's teachers and therapists without exposing our complete family data. It's exactly the control I needed."</p>
-              </div>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar">
-                  <div class="avatar-placeholder">R</div>
-                </div>
-                <div class="testimonial-info">
-                  <strong>Ray K.</strong>
-                  <span>Parent of teen with ADHD</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-dots">
-            <button class="dot active" aria-label="View testimonial 1" onclick="showTestimonial(0)"></button>
-            <button class="dot" aria-label="View testimonial 2" onclick="showTestimonial(1)"></button>
-            <button class="dot" aria-label="View testimonial 3" onclick="showTestimonial(2)"></button>
           </div>
         </div>
       </section>
@@ -1197,16 +1059,6 @@
         </div>
       </section>
 
-      <section class="section fade-up community-section" id="community">
-        <h2 class="section-title">Building Stronger Communities</h2>
-        <p>
-          CalmTrack strengthens communities by supporting families who need additional resources—empowering parents, caregivers, educators, and healthcare providers to collaborate effectively for positive, measurable outcomes. Our platform connects users to local support networks, facilitates meaningful communication with schools and medical professionals, and simplifies access to evidence-based resources tailored for neurodiverse needs.
-        </p>
-        <p>
-          By creating a network of understanding and shared learning, CalmTrack helps society embrace neurodiversity more fully. The platform encourages data-driven insights, makes progress tracking accessible to all family members, and celebrates every milestone—regardless of size. Through bridging communication gaps between individuals, families, schools, and healthcare providers, CalmTrack ensures that everyone, especially those requiring additional support, can participate fully in their communities and feel genuinely valued.
-        </p>
-      </section>
-
       <div class="final-thought">
         <span>🧩 CalmTrack transcends traditional behavior tracking.</span><br>
         <span>It's a comprehensive behavioral intelligence platform — empowering neurodivergent individuals and families to discover patterns that transform understanding into actionable care.</span>
@@ -1233,11 +1085,10 @@
   <footer class="footer">
     <div class="container">
       <p>&copy; 2025 CalmTrack | Thoughtfully Built for Families, Scientifically Backed</p>
-      <p class="timestamp">Last Updated: 2025-09-20 20:14:23</p>
+      <p class="timestamp">Last Updated: 2025-09-20 20:40:01</p>
     </div>
   </footer>
 
-  <!-- Enhanced JavaScript -->
   <script>
     // Enhanced scroll behavior for brand bar
     let lastScrollTop = 0;
@@ -1246,44 +1097,15 @@
       const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
       
       if (currentScroll > 300 && currentScroll > lastScrollTop) {
-        // Scrolling down
         brandBar.classList.add('visible');
       } else if (currentScroll < lastScrollTop) {
-        // Scrolling up
         brandBar.classList.remove('visible');
       }
       
       lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
 
-    // Enhanced testimonial functionality
-    let currentTestimonial = 0;
-    const testimonials = document.querySelectorAll('.testimonial-card');
-    const dots = document.querySelectorAll('.dot');
-
-    function showTestimonial(index) {
-      // Hide all testimonials
-      testimonials.forEach(card => {
-        card.style.display = 'none';
-      });
-      
-      // Show selected testimonial
-      testimonials[index].style.display = 'block';
-      
-      // Update active dot
-      dots.forEach(dot => dot.classList.remove('active'));
-      dots[index].classList.add('active');
-      
-      currentTestimonial = index;
-    }
-
-    // Auto-rotate testimonials
-    setInterval(() => {
-      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-      showTestimonial(currentTestimonial);
-    }, 8000);
-
-    // Enhanced intersection observer for animations
+    // Intersection observer for animations
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -1294,7 +1116,6 @@
         if (entry.isIntersecting) {
           entry.target.classList.add('in-view');
           
-          // Trigger staggered list animations
           if (entry.target.classList.contains('stagger-list')) {
             const listItems = entry.target.querySelectorAll('li');
             listItems.forEach((item, index) => {
@@ -1308,16 +1129,14 @@
       });
     }, observerOptions);
 
-    // Observe elements for animations
     document.querySelectorAll('.fade-up, .stagger-list').forEach(el => {
       observer.observe(el);
     });
 
-    // Enhanced button interactions with improved accessibility
+    // Enhanced button interactions
     const buttons = document.querySelectorAll('.btn');
     
     buttons.forEach(button => {
-      // Ripple effect
       button.addEventListener('click', function(e) {
         const rect = e.target.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -1345,15 +1164,6 @@
           ripple.remove();
         }, 600);
       });
-
-      // Enhanced focus states
-      button.addEventListener('focus', function() {
-        this.style.transform = 'translateY(-2px)';
-      });
-
-      button.addEventListener('blur', function() {
-        this.style.transform = '';
-      });
     });
 
     // Smooth scroll for internal links
@@ -1376,32 +1186,6 @@
       item.style.transform = 'translateY(20px)';
       item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
     });
-
-    // Enhanced keyboard navigation
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        // Close any open modals or menus
-        document.activeElement.blur();
-      }
-    });
-
-    // Performance optimization: Lazy load images
-    if ('IntersectionObserver' in window) {
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            img.classList.remove('lazy-load');
-            imageObserver.unobserve(img);
-          }
-        });
-      });
-
-      document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-      });
-    }
   </script>
 
   <!-- Add CSS animation for ripple effect -->
